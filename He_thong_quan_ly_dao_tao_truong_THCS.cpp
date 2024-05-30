@@ -5,19 +5,21 @@ struct Student
 {
 	int khoilop;
 	string name;
-	string stt;
-	float ToanTX1,TOanTX2,ToanGK,ToanCK;
-	float VanTX1,VanTX2,VanGK,VanCK;
-	float NNTX1,NNTX2,NNGK,NNCK;
-	float GDCGTX1,GDCDTX2,GDCDGK,GDCDCK;
-	float SuTX1,SuTX2,SuGK,SuCK;
-	float DiaTX1,DiaTX2,DiaGK,DiaCK;
-	float LiTX1,LiTX2,LiGK,LiCK;
-	float HoaTX1,HoaTX2,HoaGK,HoaCK;
-	float SinhTX1,SinhTX2,SinhGK,SinhCK;
-	float CNTX1,CNTX2,CNGK,CNCK;
-	float TinTX1,TinTX2,TinGK,TinCK;
+	long stt;
+	string HanhKiem;
+	float ToanTX1,ToanTX2,ToanGK,ToanCK,ToanTB;
+	float VanTX1,VanTX2,VanGK,VanCK,VanTB;
+	float NNTX1,NNTX2,NNGK,NNCK,NNTB;
+	float GDCGTX1,GDCDTX2,GDCDGK,GDCDCK,GDCDTB;
+	float SuTX1,SuTX2,SuGK,SuCK,SuTB;
+	float DiaTX1,DiaTX2,DiaGK,DiaCK,DiaTB;
+	float LiTX1,LiTX2,LiGK,LiCK,LiTB;
+	float HoaTX1,HoaTX2,HoaGK,HoaCK,HoaTB;
+	float SinhTX1,SinhTX2,SinhGK,SinhCK,SinhTB;
+	float CNTX1,CNTX2,CNGK,CNCK,CNTB;
+	float TinTX1,TinTX2,TinGK,TinCK,TinTB;
 	string Theduc,Nghethuat;
+	float TBmon;
 };
 
 struct HS
@@ -37,74 +39,104 @@ hs makehs()
 	cout << "Nhap ten sinh vien:"; cin.ignore();
 	getline(cin, s.name);
 	cout << "Nhap STT hoc sinh:"; cin >> s.stt;
+	cout << "Hanh kiem hoc sinh: \n"; 
+	cout << "(Tot, Kha, Trung binh, Yeu";
+	cin.ignore(); getline(cin, s.HanhKiem);
 	cout << "Nhap diem cac mon hoc:\n";
+	
 	cout << "Mon toan:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.ToanTX1 >> s.ToanTX2;
 	cout << "Diem giua ki: "; cin >> s.ToanGK;
 	cout << "Diem cuoi ki: "; cin >> s.ToanCK;
+	s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
+	
 	cout << "Mon Ngu Van:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.VanTX1 >> s.VanTX2;
 	cout << "Diem giua ki: "; cin >> s.VanGK;
 	cout << "Diem cuoi ki: "; cin >> s.VanCK;
+	s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
+	
 	cout << "Mon Ngoai Ngu:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.NNTX1 >> s.NNTX2;
 	cout << "Diem giua ki: "; cin >> s.NNGK;
 	cout << "Diem cuoi ki: "; cin >> s.NNCK;
+	s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
+	
 	cout << "Mon Giao Duc Cong Dan:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.GDCDTX1 >> s.GDCDTX2;
 	cout << "Diem giua ki: "; cin >> s.GDCDGK;
 	cout << "Diem cuoi ki: "; cin >> s.GDCDCK;
+	s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
+	
 	cout << "Mon Lich Su:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.SuTX1 >> s.SuTX2;
 	cout << "Diem giua ki: "; cin >> s.SuGK;
 	cout << "Diem cuoi ki: "; cin >> s.SuCK;
+	s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
+	
 	cout << "Mon Dia ly:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.DiaTX1 >> s.DiaTX2;
 	cout << "Diem giua ki: "; cin >> s.DiaGK;
 	cout << "Diem cuoi ki: "; cin >> s.DiaCK;
+	s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
+	
 	cout << "Mon Vat Ly:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.LiTX1 >> s.LiTX2;
 	cout << "Diem giua ki: "; cin >> s.LiGK;
 	cout << "Diem cuoi ki: "; cin >> s.LiCK;
+	s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
+	
 	cout << "Mon Hoa Hoc:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.HoaTX1 >> s.HoaTX2;
 	cout << "Diem giua ki: "; cin >> s.HoaGK;
 	cout << "Diem cuoi ki: "; cin >> s.HoaCK;
+	s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
+	
 	cout << "Mon Sinh Hoc:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.SinhTX1 >> s.SinhTX2;
 	cout << "Diem giua ki: "; cin >> s.SinhGK;
 	cout << "Diem cuoi ki: "; cin >> s.SinhCK;
+	s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
+	
 	cout << "Mon Cong Nghe:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.CNTX1 >> s.CNTX2;
 	cout << "Diem giua ki: "; cin >> s.CNGK;
 	cout << "Diem cuoi ki: "; cin >> s.CNCK;
+	s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
+	
 	cout << "Mon Tin Hoc:\n";
 	cout << "Diem thuong xuyen: "; cin >> s.TinTX1 >> s.TinTX2;
 	cout << "Diem giua ki: "; cin >> s.TinGK;
 	cout << "Diem cuoi ki: "; cin >> s.TinCK;
+	s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
+	
 	cout << "Mon The Duc:\n";
 	cout << "Neu hoc sinh Dat -> Nhap: Dat";
 	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
 	cin.ignore(); getline(cin, s.Theduc);
+	
 	cout << "Mon Nghe Thuat:\n";
 	cout << "Neu hoc sinh Dat -> Nhap: Dat";
 	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
 	cin.ignore(); getline(cin, s.Nghethuat);
+	
+	s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
+	
 	hs tmp = new HS();
 	tmp->s = s;
 	tmp->next = NULL;
 }
 
 // kiem tra danh sach rong
-bool empty(sv a)
+bool empty(hs a)
 {
 	return a == NULL;
 }
 
-// bo sung sinh vien x vao dau danh sach
-void insertfirst(sv &a)
+// bo sung hoc sinh x vao dau danh sach
+void insertfirst(hs &a)
 {
-	sv tmp = makesv();
+	hs tmp = makesv();
 	if (a == NULL)
 	{
 		a = tmp;
@@ -116,45 +148,8 @@ void insertfirst(sv &a)
 	}
 }
 
-// khoi tao hoc phan
-hp makehp()
-{
-	Hocphan a;
-	cout << "Nhap thong tin hoc phan: \n";
-	cout << "So tin chi hoc phan: ";
-	cin >> a.soTin;
-	cout << "Ten hoc phan: ";
-	cin.ignore();
-	getline(cin, a.nameHP);
-	cout << "Ma so hoc phan: ";
-	cin.ignore();
-	getline(cin, a.mshp);
-	cout << "Trong so qua trinh: ";
-	cin >> a.TSQT;
-	cout << "Trong so cuoi ki: ";
-	cin >> a.TSCK;
-	hp tmp = new HP();
-	tmp->a = a;
-	tmp->next = NULL;
-}
-
-// bo sung hoc phan moi vao dau danh sach
-void inserthp(hp &a)
-{
-	hp tmp = makehp();
-	if (a == NULL)
-	{
-		a = tmp;
-	}
-	else
-	{
-		tmp->next = a;
-		a = tmp;
-	}
-}
-
-// dem so hoc phan
-int Sizehp(hp a)
+// dem so hoc sinh
+int Sizehs(hs a)
 {
 	int dem = 0;
 	while (a != NULL)
@@ -165,323 +160,94 @@ int Sizehp(hp a)
 	return dem;
 }
 
-// bo sung hoc phan moi vao sau mon hoc co ma so cho truoc
-void inserthpmoi(hp &a, string x)
+// sap xep hoc sinh theo thu tu tang dan cua stt
+void sapxep(hs &h)
 {
-	hp p = a;
-	Hocphan as = p->a;
-	int n = Sizehp(a);
-	for (int i = 0; i < n; i++)
-	{
-		if (as.mshp != x)
-		{
-			p = p->next;
-		}
-		else
-		{
-			break;
-		}
-	}
-	hp tmp = makehp();
-	tmp->next = p->next;
-	p->next = tmp;
-}
-
-// xoa mon hoc co ma mon cho truoc
-void deletehp(hp h, string ms)
-{
-	int n = Sizehp(h);
-	hp p = h;
-	hp q = NULL;
-	for (int i = 0; i < n; i++)
-	{
-		if (p->a.mshp != ms)
-		{
-			q = p;
-			p = p->next;
-		}
-		else
-		{
-			q->next = p->next;
-		}
-	}
-}
-
-// sap xep cac mon hoc theo thu tu tang dan cua so tin chi
-void sapxep(hp &h)
-{
-	hp p = h;
+	hs p = h;
 	for (p; p->next = NULL; p = p->next)
 	{
-		hp min = p;
-		for (hp q = p->next; q != NULL; q = q->next)
+		hs min = p;
+		for (hs q = p->next; q != NULL; q = q->next)
 		{
-			if (q->a.soTin < min->a.soTin)
+			if (q->s.stt < min->s.stt)
 			{
 				min = q;
 			}
 		}
-		int tmp = min->a.soTin;
+		int tmp = min->s.stt;
 		min->a = p->a;
-		p->a.soTin = tmp;
+		p->s.stt = tmp;
 	}
 }
 
-// dem so phan tu
-int Sizesv(sv a)
+// duyet 1 hoc sinh
+void duyeths(Student s)
 {
-	int dem = 0;
-	while (a != NULL)
-	{
-		++dem;
-		a = a->next;
-	}
-	return dem;
+	cout << "Khoi lop: " << s.khoilop << endl;
+	cout << "Ho Ten: " << s.name << endl;
+	cout << "STT theo ds lop: " << s.stt << endl;
+	cout << "Hanh kiem: " << s.HanhKiem << endl;
+	cout << "Diem cac mon hoc:\n";
+	cout << "Mon Toan: " << s.ToanTX1 << " " << s.ToanTX2 << " " << s.ToanGK << " " << s.ToanCK << " " << s.ToanTB << endl;
+	cout << "Mon Ngu Van: " << s.VanTX1 << " " << s.VanTX2 << " " << s.VanGK << " " << s.VanCK << " " << s.VanTB << endl;
+	cout << "Mon Ngoai Ngu: " << s.NNTX1 << " " << s.NNTX2 << " " << s.NNGK << " " << s.NNCK << " " << s.NNTB << endl;
+	cout << "Mon Giao duc cong dan: " << s.GDCDTX1 << " " << s.GDCDTX2 << " " << s.GDCDGK << " " << s.GDCDCK << " " << s.GDCDTB << endl;
+	cout << "Mon Lich Su: " << s.SuTX1 << " " << s.SuTX2 << " " << s.SuGK << " " << s.SuCK << " " << s.SuTB << endl;
+	cout << "Mon Dia Li: " << s.DiaTX1 << " " << s.DiaTX2 << " " << s.DiaGK << " " << s.DiaCK << " " << s.DiaTB << endl;
+	cout << "Mon Vat Ly: " << s.LiTX1 << " " << s.LiTX2 << " " << s.LiGK << " " << s.LiCK << " " << s.LiTB << endl;
+	cout << "Mon Hoa Hoc: " << s.HoaTX1 << " " << s.HoaTX2 << " " << s.HoaGK << " " << s.HoaCK << " " << s.HoaTB << endl;
+	cout << "Mon Sinh Hoc: " << s.SinhTX1 << " " << s.SinhTX2 << " " << s.SinhGK << " " << s.SinhCK << " " << s.SinhTB << endl;
+	cout << "Mon Cong Nghe: " << s.CNTX1 << " " << s.CNTX2 << " " << s.CNGK << " " << s.CNCK << " " << s.CNTB << endl;
+	cout << "Mon Tin Hoc: " << s.TinTX1 << " " << s.TinTX2 << " " << s.TinGK << " " << s.TinCK << " " << s.TinTB << endl;
+	cout << "Mon The Duc: " << s.Theduc << endl;
+	cout << "Mon Nghe Thuat: " << s.Nghethuat << endl;
+	cout << "Diem trung binh tat ca cac mon: " << s.TBmon << endl;
 }
 
-// dem so hoc phan da hoc cua 1 sinh vien
-int Sizedhp(Student a)
+// duyet ds hoc sinh
+void duyetds(hs a)
 {
-	int dem = 0;
-	dhp tmp = a.k;
-	while (tmp != 0)
-	{
-		++dem;
-		tmp = tmp->next;
-	}
-	return dem;
-}
-
-// bo sung sinh vien x vao giua danh sach, truoc phan tu node duoc tro boi p
-void insertmiddle1(sv &a, int pos)
-{
-	int n = Sizesv(a);
-	if (pos <= 0)
-	{
-		cout << "khong hop le";
-		return;
-	}
-	else if (pos == 1)
-	{
-		insertfirst(a);
-		return;
-	}
-	sv q = NULL;
-	sv p = a;
-	for (int i = 1; i <= pos - 1; i++)
-	{
-		q = p;
-		p = p->next;
-	}
-	sv tmp = makesv();
-	tmp->next = q->next;
-	q->next = tmp;
-}
-
-// bo sung sinh vien x vao giua danh sach, sau phan tu node duoc tro boi p
-void insertmiddle2(sv &a, int pos)
-{
-	int n = Sizesv(a);
-	if (pos <= 0)
-	{
-		cout << "khong hop le";
-		return;
-	}
-	else if (pos == 1)
-	{
-		insertfirst(a);
-		return;
-	}
-	sv p = a;
-	for (int i = 1; i < pos - 1; i++)
-	{
-		p = p->next;
-	}
-	sv tmp = makesv();
-	tmp->next = p->next;
-	p->next = tmp;
-}
-
-// bo sung sinh vien vao sau sinh vien co ma so sinh vien cho truoc
-void insertsv(sv &a, long x)
-{
-	sv p = a;
-	Student as = p->s;
-	int n = Sizesv(a);
+	int n = Sizehs(a);
 	for (int i = 0; i < n; i++)
 	{
-		if (as.mssv != x)
-		{
-			p = p->next;
-		}
-		else
-		{
-			break;
-		}
-	}
-	sv tmp = makesv();
-	tmp->next = p->next;
-	p->next = tmp;
-}
-
-// xoa sinh vien duoc tro boi con tro p
-void deletesv(sv &a, int pos)
-{
-	if (pos <= 0 || pos > Sizesv(a))
-		return;
-	sv q = NULL, p = a;
-	for (int i = 1; i < pos; i++)
-	{
-		q = p;
-		p = p->next;
-	}
-	if (q = NULL)
-	{
-		a = a->next;
-	}
-	else
-	{
-		q->next = p->next;
-	}
-}
-
-// xoa sinh vien o truoc sinh vien duoc tro boi p
-void deletesvtruoc(sv &a, int pos)
-{
-	if (pos <= 0 || pos > Sizesv(a))
-		return;
-	sv r = NULL, q = NULL, p = a;
-	for (int i = 1; i < pos; i++)
-	{
-		r = q;
-		q = p;
-		p = p->next;
-	}
-	if (r = NULL)
-	{
-		a = a->next;
-	}
-	else
-	{
-		r->next = q->next;
-	}
-}
-
-// xoa sinh vien o sau sinh vien duoc tro boi p
-void deletesvsau(sv &a, int pos)
-{
-	if (pos <= 0 || pos > Sizesv(a))
-		return;
-	sv q = NULL, p = a;
-	for (int i = 1; i < pos; i++)
-	{
-		p = p->next;
-	}
-	q = p->next;
-	if (p = NULL)
-	{
-		a = a->next;
-	}
-	else
-	{
-		p->next = q->next;
-	}
-}
-
-// in 1 mon hoc
-void inhp(Hocphan a)
-{
-	cout << "MSHP: " << a.mshp << endl;
-	cout << "Ten hoc phan: " << a.nameHP << endl;
-	cout << "So tin hoc phan: " << a.soTin << endl;
-	cout << "Trong so qua trinh: " << a.TSQT << endl;
-	cout << "Trong so cuoi ki: " << a.TSCK << endl;
-}
-
-// in 1 sinh vien
-void insv(Student s, int n)
-{
-	cout << "MSSV: " << s.mssv << endl;
-	cout << "Ho Ten: " << s.nameSV << endl;
-	cout << "GPA: " << s.gpa << endl;
-	cout << "Danh sach hoc phan: \n";
-	for (int i = 0; i < n; i++)
-	{
-		cout << "Ma so hoc ky: " << s.k->h.MSHK << endl;
-		cout << "Ma so hoc phan: " << s.k->h.mshp << endl;
-		cout << "Diem qua trinh: " << s.k->h.diemQT << endl;
-		cout << "Diem cuoi ki: " << s.k->h.diemCK << endl;
-		s.k = s.k->next;
-	}
-}
-
-// in danh sach sinh vien
-void inds(sv a)
-{
-	int n = Sizesv(a);
-	int f = Sizedhp(a->s);
-	for (int i = 0; i < n; i++)
-	{
-		insv(a->s, f);
+		duyeths(a->s);
 		a = a->next;
 	}
 	cout << endl;
 }
 
-// tim kiem sinh vien o truoc sinh vien duoc tro boi p va in sinh vien do ra man hinh
-void findsvq(sv a, int pos)
+// tim kiem hoc sinh co khoi lop cho truoc
+void findhs1(hs a, int x)
 {
-	sv q = NULL, p = a;
-	for (int i = 1; i < pos; i++)
-	{
-		q = p;
-		p = p->next;
-	}
-	Student as = q->s;
-	int f = Sizedhp(a->s);
-	insv(q->s, f);
-}
-
-// tim kiem sinh vien bang mssv cho truoc va in sinh vien do ra man hinh
-void findsv(sv a, long x)
-{
-	sv p = a;
+	hs p = a;
 	Student as = p->s;
-	int n = Sizesv(a);
+	int n = Sizehs(a);
 	for (int i = 0; i < n; i++)
 	{
-		if (as.mssv != x)
+		p = p->next;
+		if (as.khoilop == x)
 		{
-			p = p->next;
-		}
-		else
-		{
-			int f = Sizedhp(p->s);
-			insv(p->s, f);
-			break;
+			duyeths(p->s);
 		}
 	}
 }
 
-// tim mon hoc co ma so mon hoc cho truoc va in ra man hinh
-void findhp(hp a, string x)
+// tim kiem hoc sinh co khoi lop va stt cho truoc 
+void findhs2(hs a, int x, long y )
 {
-	hp p = a;
-	Hocphan as = p->a;
-	int n = Sizehp(a);
+	hs p = a;
+	Student as = p->s;
+	int n = Sizehs(a);
 	for (int i = 0; i < n; i++)
 	{
-		if (as.mshp != x)
+		p = p->next;
+		if (as.khoilop == x && as.stt == y)
 		{
-			p = p->next;
-		}
-		else
-		{
-			inhp(p->a);
-			break;
+			duyeths(p->s);
 		}
 	}
 }
+
 
 int main()
 {
