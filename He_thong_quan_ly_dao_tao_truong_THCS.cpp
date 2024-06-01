@@ -180,6 +180,9 @@ void sapxep(hs &h)
 	}
 }
 
+// sap xep hoc sinh theo thu tu bang chu cai
+
+
 // duyet 1 hoc sinh
 void duyeths(Student s)
 {
@@ -202,6 +205,7 @@ void duyeths(Student s)
 	cout << "Mon The Duc: " << s.Theduc << endl;
 	cout << "Mon Nghe Thuat: " << s.Nghethuat << endl;
 	cout << "Diem trung binh tat ca cac mon: " << s.TBmon << endl;
+	// danh gia hoc sinh (xu ly xau)
 }
 
 // duyet ds hoc sinh
@@ -215,6 +219,9 @@ void duyetds(hs a)
 	}
 	cout << endl;
 }
+
+// duyet ds hoc sinh theo khoi lop 
+
 
 // tim kiem hoc sinh co khoi lop cho truoc
 void findhs1(hs a, int x)
@@ -247,6 +254,39 @@ void findhs2(hs a, int x, long y )
 		}
 	}
 }
+
+// xoa hoc sinh o dau 
+void deletefirst(hs &a){
+	if(a == NULL) return;
+	a = a->next;
+}
+
+// xoa hoc sinh o cuoi
+void deletelast(hs &a){
+	if(a == NULL) return;
+	hs q = NULL, p = a;
+	while(p->next != NULL){
+		q = p;
+		p = p->next;
+	}
+	if(q == NULL){
+		a = NULL;
+	}
+	else{
+		q->next = NULL;
+	}
+}
+
+// xoa hoc sinh 1 khoi lop
+
+
+// xoa hoc sinh co stt cho truoc 
+
+
+// xoa hoc sinh co ten cho truoc
+
+
+// thong ke hoc sinh
 
 
 int main()
