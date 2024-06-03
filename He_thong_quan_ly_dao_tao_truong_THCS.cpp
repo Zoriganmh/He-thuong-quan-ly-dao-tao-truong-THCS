@@ -286,7 +286,9 @@ void deletelast(hs &a){
 // xoa hoc sinh co ten cho truoc
 
 
-// thong ke hoc sinh
+// thong ke hoc sinh theo hoc luc
+
+// thong ke hoc sinh theo khoi lop
 
 
 int main()
