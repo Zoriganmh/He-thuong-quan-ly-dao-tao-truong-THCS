@@ -1,6 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// chuan hoa ten hoc sinh 
+void chuanhoa(string &h){
+	stringstream ss(h);
+	string res = "", word;
+	while(ss >> word){
+		res += toupper(word[0]);
+		for (int j = 1; j < word.size(); j++){
+			res += tolower(word[j]);
+		}
+		res += " ";
+	}
+	res.pop_back();
+	h = res;
+}
+
+
 struct Student
 {
 	int khoilop;
@@ -10,7 +27,7 @@ struct Student
 	float ToanTX1,ToanTX2,ToanGK,ToanCK,ToanTB;
 	float VanTX1,VanTX2,VanGK,VanCK,VanTB;
 	float NNTX1,NNTX2,NNGK,NNCK,NNTB;
-	float GDCGTX1,GDCDTX2,GDCDGK,GDCDCK,GDCDTB;
+	float GDCDTX1,GDCDTX2,GDCDGK,GDCDCK,GDCDTB;
 	float SuTX1,SuTX2,SuGK,SuCK,SuTB;
 	float DiaTX1,DiaTX2,DiaGK,DiaCK,DiaTB;
 	float LiTX1,LiTX2,LiGK,LiCK,LiTB;
@@ -30,18 +47,22 @@ struct HS
 
 typedef struct HS *hs;
 
-// khoi tao sinh vien
+// khoi tao hoc sinh 
 hs makehs()
 {
 	Student s;
 	cout << "Nhap thong tin hoc sinh:\n";
 	cout << "Nhap khoi lop:"; cin >> s.khoilop;
+	string name;
 	cout << "Nhap ten sinh vien:"; cin.ignore();
-	getline(cin, s.name);
+	getline(cin, name);
+	chuanhoa(name); s.name = name;
 	cout << "Nhap STT hoc sinh:"; cin >> s.stt;
 	cout << "Hanh kiem hoc sinh: \n"; 
 	cout << "(Tot, Kha, Trung binh, Yeu";
-	cin.ignore(); getline(cin, s.HanhKiem);
+	string hanhkiem;
+	cin.ignore(); getline(cin, hanhkiem);
+	chuanhoa(hanhkiem); s.HanhKiem = hanhkiem;
 	cout << "Nhap diem cac mon hoc:\n";
 	
 	cout << "Mon toan:\n";
@@ -113,12 +134,16 @@ hs makehs()
 	cout << "Mon The Duc:\n";
 	cout << "Neu hoc sinh Dat -> Nhap: Dat";
 	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
-	cin.ignore(); getline(cin, s.Theduc);
+	string theduc;
+	cin.ignore(); getline(cin, theduc);
+	chuanhoa(theduc); s.Theduc = theduc;
 	
 	cout << "Mon Nghe Thuat:\n";
 	cout << "Neu hoc sinh Dat -> Nhap: Dat";
 	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
-	cin.ignore(); getline(cin, s.Nghethuat);
+	string nghethuat;
+	cin.ignore(); getline(cin, nghethuat);
+	chuanhoa(nghethuat); s.Nghethuat = nghethuat;
 	
 	s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
 	
@@ -126,6 +151,71 @@ hs makehs()
 	tmp->s = s;
 	tmp->next = NULL;
 }
+
+
+// dem so mon diem gioi, kha, trung binh 
+
+
+
+// danh gia ket qua hoc tap cua hoc sinh 
+void danhgia(Student a){
+	int demgioi, demkha, demtb,demyeu;
+	if(a.ToanTB >= 8) ++demgioi;
+	if(6.5 <= a.ToanTB < 8) ++demkha;
+	if(5 <= a.ToanTB < 6.5) ++demtb;
+	if(a.ToanTB < 5) ++demyeu;
+	
+	if(a.VanTB >= 8) ++demgioi;
+	if(6.5 <= a.VanTB < 8) ++demkha;
+	if(5 <= a.VanTB < 6.5) ++demtb;
+	if(a.VanTB < 5) ++demyeu;
+	
+	if(a.NNTB >= 8) ++demgioi;
+	if(6.5 <= a.NNTB < 8) ++demkha;
+	if(5 <= a.NNTB < 6.5) ++demtb;
+	if(a.NNTB < 5) ++demyeu;
+	
+	if(a.GDCDTB >= 8) ++demgioi;
+	if(6.5 <= a.GDCDTB < 8) ++demkha;
+	if(5 <= a.GDCDTB < 6.5) ++demtb;
+	if(a.GDCDTB < 5) ++demyeu;
+	
+	if(a.SuTB >= 8) ++demgioi;
+	if(6.5 <= a.SuTB < 8) ++demkha;
+	if(5 <= a.SuTB < 6.5) ++demtb;
+	if(a.SuTB < 5) ++demyeu;
+	
+	if(a.DiaTB >= 8) ++demgioi;
+	if(6.5 <= a.DiaTB < 8) ++demkha;
+	if(5 <= a.DiaTB < 6.5) ++demtb;
+	if(a.DiaTB < 5) ++demyeu;
+	
+	if(a.LiTB >= 8) ++demgioi;
+	if(6.5 <= a.LiTB < 8) ++demkha;
+	if(5 <= a.LiTB < 6.5) ++demtb;
+	if(a.LiTB < 5) ++demyeu;
+	
+	if(a.HoaTB >= 8) ++demgioi;
+	if(6.5 <= a.HoaTB < 8) ++demkha;
+	if(5 <= a.HoaTB < 6.5) ++demtb;
+	if(a.HoaTB < 5) ++demyeu;
+	
+	if(a.SinhTB >= 8) ++demgioi;
+	if(6.5 <= a.SinhTB < 8) ++demkha;
+	if(5 <= a.SinhTB < 6.5) ++demtb;
+	if(a.SinhTB < 5) ++demyeu;
+	
+	if(a.CNTB >= 8) ++demgioi;
+	if(6.5 <= a.CNTB < 8) ++demkha;
+	if(5 <= a.CNTB < 6.5) ++demtb;
+	if(a.CNTB < 5) ++demyeu;
+	
+	if(a.TinTB >= 8) ++demgioi;
+	if(6.5 <= a.TinTB < 8) ++demkha;
+	if(5 <= a.TinTB < 6.5) ++demtb;
+	if(a.TinTB < 5) ++demyeu;
+}
+
 
 // kiem tra danh sach rong
 bool empty(hs a)
@@ -136,7 +226,7 @@ bool empty(hs a)
 // bo sung hoc sinh x vao dau danh sach
 void insertfirst(hs &a)
 {
-	hs tmp = makesv();
+	hs tmp = makehs();
 	if (a == NULL)
 	{
 		a = tmp;
@@ -175,12 +265,68 @@ void sapxep(hs &h)
 			}
 		}
 		int tmp = min->s.stt;
-		min->a = p->a;
+		min->s = p->s;
 		p->s.stt = tmp;
 	}
 }
 
-// sap xep hoc sinh theo thu tu bang chu cai
+
+// sap xep hoc sinh theo thu tu tang dan cua khoi lop 
+void sapxep2(hs &h){
+	hs p = h;
+	for (p; p->next = NULL; p = p->next)
+	{
+		hs min = p;
+		for (hs q = p->next; q != NULL; q = q->next)
+		{
+			if (q->s.khoilop < min->s.khoilop)
+			{
+				min = q;
+			}
+		}
+		int tmp = min->s.khoilop;
+		min->s = p->s;
+		p->s.khoilop = tmp;
+	}
+}
+
+
+// sap xep hoc sinh theo ten (thu tu bang chu cai)
+
+string tachten(string s, int i){
+	string ten = "";
+	while(s[s.length() - 1] != ' '){
+		ten.insert(ten.begin() + 0, s[s.length() - 1]);
+		s.pop_back();
+	}
+	s.pop_back();
+	if(i == 1){
+		return s;
+	}
+	if(i == 2){
+		return ten;
+	}
+}
+
+void sapxep1(hs &h){
+	hs p = h;
+	for (p; p->next = NULL; p = p->next){
+		hs min = p;
+		for (hs q = p->next; q != NULL; q = q->next){
+			if(tachten(q->s.name, 2) < tachten(min->s.name,2) ){
+				min = q;
+			}
+			if(tachten(q->s.name, 2) == tachten(min->s.name,2)){
+				if(tachten(q->s.name, 1) < tachten(min->s.name,1) ){
+				min = q;
+				}
+			}
+		}
+		string tmp = min->s.name;
+		min->s = p->s;
+		p->s.name = tmp;
+	}
+}
 
 
 // duyet 1 hoc sinh
@@ -220,7 +366,18 @@ void duyetds(hs a)
 	cout << endl;
 }
 
-// duyet ds hoc sinh theo khoi lop 
+// duyet ds hoc sinh theo khoi lop
+void duyetdskhoi(hs a, int x){
+	int n = Sizehs(a);
+	for (int i = 0; i < n; i++)
+	{
+		if(a->s.khoilop == x){
+			duyeths(a->s);
+		}
+		a = a->next;
+	}
+	cout << endl;
+} 
 
 
 // tim kiem hoc sinh co khoi lop cho truoc
@@ -255,6 +412,22 @@ void findhs2(hs a, int x, long y )
 	}
 }
 
+// tim kiem hoc sinh theo ten
+void findhs3(hs a, string nem){
+	hs p = a;
+	Student as = p->s;
+	int n = Sizehs(a);
+	for (int i = 0; i < n; i++)
+	{
+		p = p->next;
+		if (as.name == nem)
+		{
+			duyeths(p->s);
+		}
+	}
+}
+
+
 // xoa hoc sinh o dau 
 void deletefirst(hs &a){
 	if(a == NULL) return;
@@ -277,22 +450,90 @@ void deletelast(hs &a){
 	}
 }
 
-// xoa hoc sinh 1 khoi lop
+// xoa hoc sinh 1 khoi lop 
+void deletehs3(hs &h, int x){
+	int n = Sizehs(h);
+	hs p = h;
+	hs q = NULL;
+	for(int i = 0 ; i < n ; i++){
+		if(p->s.khoilop == x ){
+			q->next = p->next;
+		} else{
+			q = p;
+		}
+		p = p->next;
+	}
+}
 
 
 // xoa hoc sinh co stt cho truoc 
+void deletehs4(hs &h, long x){
+	int n = Sizehs(h);
+	hs p = h;
+	hs q = NULL;
+	for(int i = 0 ; i < n ; i++){
+		if(p->s.stt == x ){
+			q->next = p->next;
+		} else{
+			q = p;
+		}
+		p = p->next;
+	}
+}
+
+
+// xoa hoc sinh co khoi lop va stt tuong ung
+void deletehs1(hs &h, int x, long y){
+	int n = Sizehs(h);
+	hs p = h;
+	hs q = NULL;
+	for(int i = 0 ; i < n ; i++){
+		if(p->s.khoilop == x && p->s.stt == y){
+			q->next = p->next;
+			break;
+		} else{
+			q = p;
+			p = p->next;
+		}
+	}
+}
 
 
 // xoa hoc sinh co ten cho truoc
+void deletehs2(hs &h, string nem){
+	int n = Sizehs(h);
+	hs p = h;
+	hs q = NULL;
+	for(int i = 0 ; i < n ; i++){
+		if(p->s.name != nem){
+			q = p;
+			p = p->next;
+		} else{
+			q->next = p->next;
+		break;
+		}
+	}
+}
+
+
+// sua thong tin hoc sinh 
 
 
 // thong ke hoc sinh
 
 
+// thong ke hoc sinh theo lop hoc 
+
+
+// thong ke hoc sinh theo khoi lop 
+
+
+// menu
+
+
 int main()
 {
-	sv head = NULL;
-	hp head1 = NULL;
+	hs head = NULL;
 	while (1)
 	{
 		cout << "Menu\n";
