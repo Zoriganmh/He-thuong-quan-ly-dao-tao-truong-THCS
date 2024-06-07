@@ -37,7 +37,7 @@ struct Student
 	float TinTX1,TinTX2,TinGK,TinCK,TinTB;
 	string Theduc,Nghethuat;
 	float TBmon;
-	string loai;
+	int loai;
 };
 
 struct HS
@@ -242,73 +242,73 @@ void danhgia(Student a){
 	
 	// dieu kien hoc sinh gioi
 	if(a.TBmon >= 8){
-		if(a.HanhKiem == Tot){
+		if(a.HanhKiem == "Tot"){
 			if(dem3 >= 1 && dem4 == 0){
-				a.loai = Kha;
+				a.loai = 2;
 				cout << "Hoc sinh kha";
 			}
 			else if(dem4 >= 1){
-				a.loai = Trung Binh;
-				cout << "Hoc sinh trung binh"
+				a.loai = 3;
+				cout << "Hoc sinh trung binh";
 			}
 			else if(dem5 >= 1){
-				a.loai == Yeu;
+				a.loai = 4;
 				cout << "Hoc sinh yeu";
 			}
 			else{
-				if(a.Nghethuat == Dat && a.Theduc == Dat){
+				if(a.Nghethuat == "Dat" && a.Theduc == "Dat"){
 					if(a.ToanTB >= 8 || a.VanTB >= 8 || a.NNTB >= 8){
-						a.loai = Gioi;
+						a.loai = 1;
 						cout << "Hoc sinh gioi";
 					}
 					else {
-						a.loai = Kha;
+						a.loai = 2;
 						cout << "Hoc sinh kha";
 					}
 				} 
 				else {
-					a.loai = Kha;
+					a.loai = 2;
 					cout << "Hoc sinh kha";
 				}
 			}
 		}
-		else if(a.HanhKiem == Yeu){
-			a.loai = Khong Qua;
+		else if(a.HanhKiem == "Yeu"){
+			a.loai = 5;
 			cout << "Hoc sinh dup";
 		}
 		else {
-			a.loai = Kha;
+			a.loai = 2;
 			cout << "Hoc sinh kha";
 		}
 	}
 	
 	// dieu kien hoc sinh kha
 	else if( 6 <= a.TBmon < 8){
-		if(a.HanhKiem == Yeu){
-			a.loai = Khong Qua;
+		if(a.HanhKiem == "Yeu"){
+			a.loai = 5;
 			cout << "Hoc sinh dup";
 		}
 		else {
 			if(dem4 >= 1){
-				a.loai = Trung Binh;
+				a.loai = 3;
 				cout << "Hoc sinh trung binh";
 			}
 			else if(dem5 >= 1){
-				a.loai == Yeu;
+				a.loai == 4;
 				cout << "Hoc sinh yeu";
 			}
 			else{
-				if(a.Nghethuat != Dat || a.Theduc != Dat){
-					a.loai = Trung Binh;
+				if(a.Nghethuat != "Dat" || a.Theduc != "Dat"){
+					a.loai = 3;
 					cout << "Hoc sinh trung binh";
 				}
-				else if(a.Nghethuat == Dat && a.Theduc == Dat){
+				else if(a.Nghethuat == "Dat" && a.Theduc == "Dat"){
 					if(a.ToanTB >= 6.5 || a.VanTB >= 6.5 || a.NNTB >= 6.5){
-						a.loai = Kha;
+						a.loai = 2;
 						cout << "Hoc sinh kha";
 					}
 					else {
-						a.loai = Trung Binh;
+						a.loai = 3;
 						cout << "Hoc sinh trung binh";
 					}
 				}
@@ -318,27 +318,27 @@ void danhgia(Student a){
 	
 	// dieu kien hoc sinh trung binh 
 	else if( 5 <= a.TBmon < 6.5){
-		if(a.HanhKiem == Yeu){
-			a.loai = Khong Qua;
+		if(a.HanhKiem == "Yeu"){
+			a.loai = 5;
 			cout << "Hoc sinh dup";
 		}
 		else {
 			if(dem5 >= 1){
-				a.loai = Yeu;
+				a.loai = 4;
 				cout << "Hoc sinh yeu";
 			}
 			else{
-				if(a.Nghethuat != Dat || a.Theduc != Dat){
-					a.loai = Yeu;
+				if(a.Nghethuat != "Dat" || a.Theduc != "Dat"){
+					a.loai = 4;
 					cout << "Hoc sinh yeu";
 				}
-				else if(a.Nghethuat == Dat && a.Theduc == Dat){
+				else if(a.Nghethuat == "Dat" && a.Theduc == "Dat"){
 					if(a.ToanTB >= 5 || a.VanTB >= 5 || a.NNTB >= 5){
-						a.loai = Trung Binh;
+						a.loai = 3;
 						cout << "Hoc sinh trung binh";
 					}
 					else {
-						a.loai = Yeu;
+						a.loai = 4;
 						cout << "Hoc sinh yeu";
 					}
 				}
@@ -348,8 +348,14 @@ void danhgia(Student a){
 	
 	// dieu kien hoc sinh yeu
 	else if(a.TBmon < 3.5){
-		a.loai == Yeu;
-		cout << "Hoc sinh yeu";
+		if(a.HanhKiem == "Yeu"){
+			a.loai = 5;
+			cout << "Hoc sinh dup";
+		}
+		else{
+			a.loai = 4;
+			cout << "Hoc sinh yeu";
+		}
 	}
 	
 }
@@ -656,135 +662,156 @@ void deletehs2(hs &h, string nem){
 
 
 // sua thong tin hoc sinh 
+void sua(hs &a, int x){
+	// mon toan
+	if(x == 1){
+		int lc1; 
+		cout << "Diem mon toan hien tai: " << a->s.ToanTX1 << " " << a->s.ToanTX2 << " " << a->s.ToanGK << " " << a->s.ToanCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc1;
+		if(lc1 == 1){
+			cout << "Diem moi: ";cin >> a->s.ToanTX1;
+		}
+		else if(lc1 == 2){
+			cout << "Diem moi: ";cin >> a->s.ToanTX2;
+		}
+		else if(lc1 == 3){
+			cout << "Diem moi: ";cin >> a->s.ToanGK;
+		}
+		else if(lc1 == 4){
+			cout << "Diem moi: ";cin >> a->s.ToanCK;
+		}
+	}
+	// mon van
+	else if(x == 2){
+		int lc2; 
+		cout << "Diem mon van hien tai: " << a->s.VanTX1 << " " << a->s.VanTX2 << " " << a->s.VanGK << " " << a->s.VanCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc2;
+		if(lc2 == 1){
+			cout << "Diem moi: ";cin >> a->s.VanTX1;
+		}
+		else if(lc2 == 2){
+			cout << "Diem moi: ";cin >> a->s.VanTX2;
+		}
+		else if(lc2 == 3){
+			cout << "Diem moi: ";cin >> a->s.VanGK;
+		}
+		else if(lc2 == 4){
+			cout << "Diem moi: ";cin >> a->s.VanCK;
+		}
+	}
+	// mon ngoai ngu
+	else if(x == 3){
+		int lc3; 
+		cout << "Diem mon ngoai ngu hien tai: " << a->s.NNTX1 << " " << a->s.NNTX2 << " " << a->s.NNGK << " " << a->s.NNCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc3;
+		if(lc3 == 1){
+			cout << "Diem moi: ";cin >> a->s.NNTX1;
+		}
+		else if(lc3 == 2){
+			cout << "Diem moi: ";cin >> a->s.NNTX2;
+		}
+		else if(lc3 == 3){
+			cout << "Diem moi: ";cin >> a->s.NNGK;
+		}
+		else if(lc3 == 4){
+			cout << "Diem moi: ";cin >> a->s.NNCK;
+		}
+	}
+}
 
 
 // thong ke hoc sinh
-
 void thongke(hs a){
+	float dem1 = 0, dem2 = 0, dem3 = 0, dem4 = 0, dem5 = 0;
+	int n = Sizehs(a);
 	hs p = a;
 	while(p->next != NULL){
-		
-		if(a.loai == Gioi) ++dem1;
-		if(a.loai == Kha) ++dem2;
-		if(a.loai == Trung Binh) ++dem3;
-		if(a.loai == Yeu) ++dem4;
-		if(a.loai == Khong Qua) ++dem5;
-		
-		
+		if(a->s.loai == 1) ++dem1;
+		if(a->s.loai == 2) ++dem2;
+		if(a->s.loai == 3) ++dem3;
+		if(a->s.loai == 4) ++dem4;
+		if(a->s.loai == 5) ++dem5;
+		p = p->next;
 	}
+	float tbgioi = dem1 / n * 100;
+	float tbkha = dem2 / n * 100;
+	float tbtb = dem3 / n * 100;
+	float tbyeu = dem4 / n * 100;
+	float tbdup = dem5 / n * 100;
+	
+	cout << "Tong cong " << n << " hoc sinh" << endl;
+	cout << dem1 << " hoc sinh gioi chiem " << tbgioi << " %" << endl;
+	cout << dem2 << " hoc sinh kha chiem " << tbkha << " %" << endl;
+	cout << dem3 << " hoc sinh trung binh chiem " << tbtb << " %" << endl;
+	cout << dem4 << " hoc sinh yeu chiem " << tbyeu << " %" << endl;
+	cout << dem5 << " hoc sinh dup chiem " << tbdup << " %" << endl;
 }
 
 
 // thong ke hoc sinh theo khoi lop 
+void thongkekhoi(hs a, int x){
+	float dem1 = 0, dem2 = 0, dem3 = 0, dem4 = 0, dem5 = 0;
+	int n = Sizehs(a);
+	hs p = a;
+	while(p->next != NULL){
+		if(a->s.khoilop == x){
+			if(a->s.loai == 1) ++dem1;
+			if(a->s.loai == 2) ++dem2;
+			if(a->s.loai == 3) ++dem3;
+			if(a->s.loai == 4) ++dem4;
+			if(a->s.loai == 5) ++dem5;
+		}
+		p = p->next;
+	}
+	float tbgioi = dem1 / n * 100;
+	float tbkha = dem2 / n * 100;
+	float tbtb = dem3 / n * 100;
+	float tbyeu = dem4 / n * 100;
+	float tbdup = dem5 / n * 100;
+	
+	cout << "Khoi lop " << x  << " tong cong " << n << " hoc sinh" << endl;
+	cout << dem1 << " hoc sinh gioi chiem " << tbgioi << " %" << endl;
+	cout << dem2 << " hoc sinh kha chiem " << tbkha << " %" << endl;
+	cout << dem3 << " hoc sinh trung binh chiem " << tbtb << " %" << endl;
+	cout << dem4 << " hoc sinh yeu chiem " << tbyeu << " %" << endl;
+	cout << dem5 << " hoc sinh dup chiem " << tbdup << " %" << endl;
+}
 
 
-// menu
+// hoc sinh chuyen lop
 
 
-int main()
-{
+int main(){
 	hs head = NULL;
-	while (1)
-	{
-		cout << "Menu\n";
-		cout << "1.Bo sung sinh vien x vao dau danh sach\n";
-		cout << "2.Bo sung sinh vien x vao giua danh sach, truoc phan tu node duoc tro boi p \n";
-		cout << "3.Bo sung sinh vien x vao giua danh sach, sau phan tu node duoc tro boi p \n";
-		cout << "4.Tim kiem sinh vien co ma so sinh vien cho truoc \n";
-		cout << "5.Tim kiem sinh vien o truoc sinh vien duoc tro boi p\n";
-		cout << "6.Bo sung sinh vien vao sau sinh vien co ma so sinh vien cho truoc\n";
-		cout << "7.Xoa sinh vien duoc tro boi p";
-		cout << "8.Xoa sinh vien o truoc sinh vien duoc tro boi p\n";
-		cout << "9.Xoa sinh vien o sau sinh vien duoc tro boi p\n";
-		cout << "10.Tim mon hoc cua sinh vien co ma so mon hoc cho truoc\n";
-		cout << "11.Bo sung mon hoc moi\n";
-		cout << "12.Loai bo mon hoc co ma mon cho truoc\n";
-		cout << "0.Thoat\n";
-		int lc;
-		cout << "Nhap lua chon: ";
-		cin >> lc;
-		if (lc == 0)
-		{
+	while(1){
+		cout << "Ban la:" << endl;
+		cout << "1.Hoc sinh" << endl;
+		cout << "2.Giao vien" << endl;
+		cout << "0.Thoat" << endl;
+		int lc1; cout << "Nhap lua chon: "; cin >> lc1;
+		if(lc1 == 0){
 			return 0;
 		}
-		else if (lc == 1)
-		{
-			insertfirst(head);
-		}
-		else if (lc == 2)
-		{
-			int pos;
-			cout << "Nhap vi tri can bo sung:";
-			cin >> pos;
-			insertmiddle1(head, pos);
-		}
-		else if (lc == 3)
-		{
-			int pos;
-			cout << "Nhap vi tri can bo sung:";
-			cin >> pos;
-			insertmiddle2(head, pos);
-		}
-		else if (lc == 4)
-		{
-			long ms;
-			cout << "Nhap mssv cua sinh vien can tim: ";
-			cin >> ms;
-			findsv(head, ms);
-		}
-		else if (lc == 5)
-		{
-			long vt;
-			cout << "Nhap vi tri p: ";
-			cin >> vt;
-			findsvq(head, vt);
-		}
-		else if (lc == 6)
-		{
-			long mss;
-			cout << "Nhap ma so sinh vien can tro: ";
-			cin >> mss;
-			insertsv(head, mss);
-		}
-		else if (lc == 7)
-		{
-			int vt1;
-			cout << "Nhap vi tri can xoa: ";
-			cin >> vt1;
-			deletesv(head, vt1);
-		}
-		else if (lc == 8)
-		{
-			int vt2;
-			cout << "Nhap vi tri can tro: ";
-			cin >> vt2;
-			deletesvtruoc(head, vt2);
-		}
-		else if (lc == 9)
-		{
-			int vt3;
-			cout << "Nhap vi tri can tro: ";
-			cin >> vt3;
-			deletesvsau(head, vt3);
-		}
-		else if (lc == 10)
-		{
-			string msmh;
-			cout << "Nhap ma so mon hoc can tim: ";
-			getline(cin, msmh);
-			findhp(head1, msmh);
-		}
-		else if (lc == 11)
-		{
-			inserthp(head1);
-			sapxep(head1);
-		}
-		else if (lc == 12)
-		{
-			string msmh1;
-			cout << "Nhap ma so cua mon hoc can xoa: ";
-			getline(cin, msmh1);
-			deletehp(head1, msmh1);
+		else if(lc1 == 1){
+			
 		}
 	}
 }
+
+	
+
