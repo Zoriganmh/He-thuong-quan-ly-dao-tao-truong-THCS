@@ -37,6 +37,7 @@ struct Student
 	float TinTX1,TinTX2,TinGK,TinCK,TinTB;
 	string Theduc,Nghethuat;
 	float TBmon;
+	string loai;
 };
 
 struct HS
@@ -153,67 +154,204 @@ hs makehs()
 }
 
 
-// dem so mon diem gioi, kha, trung binh 
-
-
-
-// danh gia ket qua hoc tap cua hoc sinh 
-void danhgia(Student a){
-	int demgioi, demkha, demtb,demyeu;
+// dem so hoc sinh gioi, kha, trung binh, yeu
+int demhs(Student a, int x){
+	int demgioi = 0, demkha = 0, demtb = 0,demyeu = 0,demsieuyeu = 0;
+	
 	if(a.ToanTB >= 8) ++demgioi;
 	if(6.5 <= a.ToanTB < 8) ++demkha;
 	if(5 <= a.ToanTB < 6.5) ++demtb;
-	if(a.ToanTB < 5) ++demyeu;
+	if(3.5 <= a.ToanTB < 5) ++demyeu;
+	if(a.ToanTB < 3.5) ++demsieuyeu;
 	
 	if(a.VanTB >= 8) ++demgioi;
 	if(6.5 <= a.VanTB < 8) ++demkha;
 	if(5 <= a.VanTB < 6.5) ++demtb;
-	if(a.VanTB < 5) ++demyeu;
+	if(3.5 <= a.VanTB < 5) ++demyeu;
+	if(a.VanTB < 3.5) ++demsieuyeu;
 	
 	if(a.NNTB >= 8) ++demgioi;
 	if(6.5 <= a.NNTB < 8) ++demkha;
 	if(5 <= a.NNTB < 6.5) ++demtb;
-	if(a.NNTB < 5) ++demyeu;
+	if(3.5 <= a.NNTB < 5) ++demyeu;
+	if(a.NNTB < 3.5) ++demsieuyeu;
 	
 	if(a.GDCDTB >= 8) ++demgioi;
 	if(6.5 <= a.GDCDTB < 8) ++demkha;
 	if(5 <= a.GDCDTB < 6.5) ++demtb;
-	if(a.GDCDTB < 5) ++demyeu;
+	if(3.5 <= a.GDCDTB < 5) ++demyeu;
+	if(a.GDCDTB < 3.5) ++demsieuyeu;
 	
 	if(a.SuTB >= 8) ++demgioi;
 	if(6.5 <= a.SuTB < 8) ++demkha;
 	if(5 <= a.SuTB < 6.5) ++demtb;
-	if(a.SuTB < 5) ++demyeu;
+	if(3.5 <= a.SuTB < 5) ++demyeu;
+	if(a.SuTB < 3.5) ++demsieuyeu;
 	
 	if(a.DiaTB >= 8) ++demgioi;
 	if(6.5 <= a.DiaTB < 8) ++demkha;
 	if(5 <= a.DiaTB < 6.5) ++demtb;
-	if(a.DiaTB < 5) ++demyeu;
+	if(3.5 <= a.DiaTB < 5) ++demyeu;
+	if(a.DiaTB < 3.5) ++demsieuyeu;
 	
 	if(a.LiTB >= 8) ++demgioi;
 	if(6.5 <= a.LiTB < 8) ++demkha;
 	if(5 <= a.LiTB < 6.5) ++demtb;
-	if(a.LiTB < 5) ++demyeu;
+	if(3.5 <= a.LiTB < 5) ++demyeu;
+	if(a.LiTB < 3.5) ++demsieuyeu;
 	
 	if(a.HoaTB >= 8) ++demgioi;
 	if(6.5 <= a.HoaTB < 8) ++demkha;
 	if(5 <= a.HoaTB < 6.5) ++demtb;
-	if(a.HoaTB < 5) ++demyeu;
+	if(3.5 <= a.HoaTB < 5) ++demyeu;
+	if(a.HoaTB < 3.5) ++demsieuyeu;
 	
 	if(a.SinhTB >= 8) ++demgioi;
 	if(6.5 <= a.SinhTB < 8) ++demkha;
 	if(5 <= a.SinhTB < 6.5) ++demtb;
-	if(a.SinhTB < 5) ++demyeu;
+	if(3.5 <= a.SinhTB < 5) ++demyeu;
+	if(a.SinhTB < 3.5) ++demsieuyeu;
 	
 	if(a.CNTB >= 8) ++demgioi;
 	if(6.5 <= a.CNTB < 8) ++demkha;
 	if(5 <= a.CNTB < 6.5) ++demtb;
-	if(a.CNTB < 5) ++demyeu;
+	if(3.5 <= a.CNTB < 5) ++demyeu;
+	if(a.CNTB < 3.5) ++demsieuyeu;
 	
 	if(a.TinTB >= 8) ++demgioi;
 	if(6.5 <= a.TinTB < 8) ++demkha;
 	if(5 <= a.TinTB < 6.5) ++demtb;
-	if(a.TinTB < 5) ++demyeu;
+	if(3.5 <= a.TinTB < 5) ++demyeu;
+	if(a.TinTB < 3.5) ++demsieuyeu;
+	
+	if(x == 1) return demgioi;
+	if(x == 2) return demkha;
+	if(x == 3) return demtb;
+	if(x == 4) return demyeu;
+	if(x == 5) return demsieuyeu;
+}
+
+
+// danh gia ket qua hoc tap cua hoc sinh 
+void danhgia(Student a){
+	int dem1 = demhs(a, 1);
+	int dem2 = demhs(a, 2);
+	int dem3 = demhs(a, 3);
+	int dem4 = demhs(a, 4);
+	int dem5 = demhs(a, 5);
+	
+	// dieu kien hoc sinh gioi
+	if(a.TBmon >= 8){
+		if(a.HanhKiem == Tot){
+			if(dem3 >= 1 && dem4 == 0){
+				a.loai = Kha;
+				cout << "Hoc sinh kha";
+			}
+			else if(dem4 >= 1){
+				a.loai = Trung Binh;
+				cout << "Hoc sinh trung binh"
+			}
+			else if(dem5 >= 1){
+				a.loai == Yeu;
+				cout << "Hoc sinh yeu";
+			}
+			else{
+				if(a.Nghethuat == Dat && a.Theduc == Dat){
+					if(a.ToanTB >= 8 || a.VanTB >= 8 || a.NNTB >= 8){
+						a.loai = Gioi;
+						cout << "Hoc sinh gioi";
+					}
+					else {
+						a.loai = Kha;
+						cout << "Hoc sinh kha";
+					}
+				} 
+				else {
+					a.loai = Kha;
+					cout << "Hoc sinh kha";
+				}
+			}
+		}
+		else if(a.HanhKiem == Yeu){
+			a.loai = Khong Qua;
+			cout << "Hoc sinh dup";
+		}
+		else {
+			a.loai = Kha;
+			cout << "Hoc sinh kha";
+		}
+	}
+	
+	// dieu kien hoc sinh kha
+	else if( 6 <= a.TBmon < 8){
+		if(a.HanhKiem == Yeu){
+			a.loai = Khong Qua;
+			cout << "Hoc sinh dup";
+		}
+		else {
+			if(dem4 >= 1){
+				a.loai = Trung Binh;
+				cout << "Hoc sinh trung binh";
+			}
+			else if(dem5 >= 1){
+				a.loai == Yeu;
+				cout << "Hoc sinh yeu";
+			}
+			else{
+				if(a.Nghethuat != Dat || a.Theduc != Dat){
+					a.loai = Trung Binh;
+					cout << "Hoc sinh trung binh";
+				}
+				else if(a.Nghethuat == Dat && a.Theduc == Dat){
+					if(a.ToanTB >= 6.5 || a.VanTB >= 6.5 || a.NNTB >= 6.5){
+						a.loai = Kha;
+						cout << "Hoc sinh kha";
+					}
+					else {
+						a.loai = Trung Binh;
+						cout << "Hoc sinh trung binh";
+					}
+				}
+			}
+		}
+	}
+	
+	// dieu kien hoc sinh trung binh 
+	else if( 5 <= a.TBmon < 6.5){
+		if(a.HanhKiem == Yeu){
+			a.loai = Khong Qua;
+			cout << "Hoc sinh dup";
+		}
+		else {
+			if(dem5 >= 1){
+				a.loai = Yeu;
+				cout << "Hoc sinh yeu";
+			}
+			else{
+				if(a.Nghethuat != Dat || a.Theduc != Dat){
+					a.loai = Yeu;
+					cout << "Hoc sinh yeu";
+				}
+				else if(a.Nghethuat == Dat && a.Theduc == Dat){
+					if(a.ToanTB >= 5 || a.VanTB >= 5 || a.NNTB >= 5){
+						a.loai = Trung Binh;
+						cout << "Hoc sinh trung binh";
+					}
+					else {
+						a.loai = Yeu;
+						cout << "Hoc sinh yeu";
+					}
+				}
+			}
+		}
+	}
+	
+	// dieu kien hoc sinh yeu
+	else if(a.TBmon < 3.5){
+		a.loai == Yeu;
+		cout << "Hoc sinh yeu";
+	}
+	
 }
 
 
@@ -352,6 +490,7 @@ void duyeths(Student s)
 	cout << "Mon Nghe Thuat: " << s.Nghethuat << endl;
 	cout << "Diem trung binh tat ca cac mon: " << s.TBmon << endl;
 	// danh gia hoc sinh (xu ly xau)
+	danhgia(s);
 }
 
 // duyet ds hoc sinh
@@ -521,8 +660,19 @@ void deletehs2(hs &h, string nem){
 
 // thong ke hoc sinh
 
-
-// thong ke hoc sinh theo lop hoc 
+void thongke(hs a){
+	hs p = a;
+	while(p->next != NULL){
+		
+		if(a.loai == Gioi) ++dem1;
+		if(a.loai == Kha) ++dem2;
+		if(a.loai == Trung Binh) ++dem3;
+		if(a.loai == Yeu) ++dem4;
+		if(a.loai == Khong Qua) ++dem5;
+		
+		
+	}
+}
 
 
 // thong ke hoc sinh theo khoi lop 
