@@ -661,10 +661,44 @@ void deletehs2(hs &h, string nem){
 }
 
 
-// sua thong tin hoc sinh 
-void sua(hs &a, int x){
+// sua thong tin hoc sinh co ten cho truoc
+void sua(hs &a,string y, int x){
+	// tim kiem hoc sinh co ten y
+	while(a->s.name != y){
+		a = a->next;
+	}
+	// sua nhung thong tin khac
+	if(x == 0){
+		int lc0;
+		cout << "Thong tin hoc sinh hien tai: " << endl;
+		cout << "1.Khoi lop: " << a->s.khoilop << endl;
+		cout << "2.Ho va ten: "<< a->s.name << endl;
+		cout << "3.So thu tu: "<< a->s.stt << endl;
+		cout << "4.Hanh kiem: "<< a->s.HanhKiem << endl;
+		cout << "Nhap lua chon thong tin can sua: "; cin >> lc0;
+		if(lc0 == 1){
+			cout << "Khoi lop moi: "; cin >> a->s.khoilop;
+		}
+		else if(lc0 == 2){
+			string nem;
+			cout << "Ho va ten hoc sinh: ";cin.ignore();
+			getline(cin, nem);
+			chuanhoa(nem);
+			a->s.name = nem;
+		}
+		else if(lc0 == 3){
+			cout << "So thu tu moi: "; cin >> a->s.stt;
+		}
+		else if(lc0 == 4){
+			string hanhkiemmoi;
+			cout << "Hanh kiem hoc sinh: "; cin.ignore();
+			getline(cin, hanhkiemmoi);
+			chuanhoa(hanhkiemmoi);
+			a->s.HanhKiem = hanhkiemmoi;
+		}
+	}
 	// mon toan
-	if(x == 1){
+	else if(x == 1){
 		int lc1; 
 		cout << "Diem mon toan hien tai: " << a->s.ToanTX1 << " " << a->s.ToanTX2 << " " << a->s.ToanGK << " " << a->s.ToanCK << " " << endl;
 		cout << "Diem can sua: " << endl;
