@@ -663,33 +663,33 @@ void deletehs2(hs &h, string nem){
 
 // sua thong tin hoc sinh co ten cho truoc
 void sua(hs &a,string y, int x){
+	int lc;
 	// tim kiem hoc sinh co ten y
 	while(a->s.name != y){
 		a = a->next;
 	}
 	// sua nhung thong tin khac
 	if(x == 0){
-		int lc0;
 		cout << "Thong tin hoc sinh hien tai: " << endl;
 		cout << "1.Khoi lop: " << a->s.khoilop << endl;
 		cout << "2.Ho va ten: "<< a->s.name << endl;
 		cout << "3.So thu tu: "<< a->s.stt << endl;
 		cout << "4.Hanh kiem: "<< a->s.HanhKiem << endl;
-		cout << "Nhap lua chon thong tin can sua: "; cin >> lc0;
-		if(lc0 == 1){
+		cout << "Nhap lua chon thong tin can sua: "; cin >> lc;
+		if(lc == 1){
 			cout << "Khoi lop moi: "; cin >> a->s.khoilop;
 		}
-		else if(lc0 == 2){
+		else if(lc == 2){
 			string nem;
 			cout << "Ho va ten hoc sinh: ";cin.ignore();
 			getline(cin, nem);
 			chuanhoa(nem);
 			a->s.name = nem;
 		}
-		else if(lc0 == 3){
+		else if(lc == 3){
 			cout << "So thu tu moi: "; cin >> a->s.stt;
 		}
-		else if(lc0 == 4){
+		else if(lc == 4){
 			string hanhkiemmoi;
 			cout << "Hanh kiem hoc sinh: "; cin.ignore();
 			getline(cin, hanhkiemmoi);
@@ -699,73 +699,265 @@ void sua(hs &a,string y, int x){
 	}
 	// mon toan
 	else if(x == 1){
-		int lc1; 
 		cout << "Diem mon toan hien tai: " << a->s.ToanTX1 << " " << a->s.ToanTX2 << " " << a->s.ToanGK << " " << a->s.ToanCK << " " << endl;
 		cout << "Diem can sua: " << endl;
 		cout << "1.Diem thuong xuyen 1" << endl;
 		cout << "2.Diem thuong xuyen 2" << endl;
 		cout << "3.Diem giua ki" << endl;
 		cout << "4.Diem cuoi ki" << endl;
-		cout << "Nhap lua chon: "; cin >> lc1;
-		if(lc1 == 1){
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
 			cout << "Diem moi: ";cin >> a->s.ToanTX1;
 		}
-		else if(lc1 == 2){
+		else if(lc == 2){
 			cout << "Diem moi: ";cin >> a->s.ToanTX2;
 		}
-		else if(lc1 == 3){
+		else if(lc == 3){
 			cout << "Diem moi: ";cin >> a->s.ToanGK;
 		}
-		else if(lc1 == 4){
+		else if(lc == 4){
 			cout << "Diem moi: ";cin >> a->s.ToanCK;
 		}
 	}
 	// mon van
 	else if(x == 2){
-		int lc2; 
 		cout << "Diem mon van hien tai: " << a->s.VanTX1 << " " << a->s.VanTX2 << " " << a->s.VanGK << " " << a->s.VanCK << " " << endl;
 		cout << "Diem can sua: " << endl;
 		cout << "1.Diem thuong xuyen 1" << endl;
 		cout << "2.Diem thuong xuyen 2" << endl;
 		cout << "3.Diem giua ki" << endl;
 		cout << "4.Diem cuoi ki" << endl;
-		cout << "Nhap lua chon: "; cin >> lc2;
-		if(lc2 == 1){
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
 			cout << "Diem moi: ";cin >> a->s.VanTX1;
 		}
-		else if(lc2 == 2){
+		else if(lc == 2){
 			cout << "Diem moi: ";cin >> a->s.VanTX2;
 		}
-		else if(lc2 == 3){
+		else if(lc == 3){
 			cout << "Diem moi: ";cin >> a->s.VanGK;
 		}
-		else if(lc2 == 4){
+		else if(lc == 4){
 			cout << "Diem moi: ";cin >> a->s.VanCK;
 		}
 	}
 	// mon ngoai ngu
 	else if(x == 3){
-		int lc3; 
 		cout << "Diem mon ngoai ngu hien tai: " << a->s.NNTX1 << " " << a->s.NNTX2 << " " << a->s.NNGK << " " << a->s.NNCK << " " << endl;
 		cout << "Diem can sua: " << endl;
 		cout << "1.Diem thuong xuyen 1" << endl;
 		cout << "2.Diem thuong xuyen 2" << endl;
 		cout << "3.Diem giua ki" << endl;
 		cout << "4.Diem cuoi ki" << endl;
-		cout << "Nhap lua chon: "; cin >> lc3;
-		if(lc3 == 1){
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
 			cout << "Diem moi: ";cin >> a->s.NNTX1;
 		}
-		else if(lc3 == 2){
+		else if(lc == 2){
 			cout << "Diem moi: ";cin >> a->s.NNTX2;
 		}
-		else if(lc3 == 3){
+		else if(lc == 3){
 			cout << "Diem moi: ";cin >> a->s.NNGK;
 		}
-		else if(lc3 == 4){
+		else if(lc == 4){
 			cout << "Diem moi: ";cin >> a->s.NNCK;
 		}
 	}
+	// mon GĐCD
+	else if(x == 4){
+		cout << "Diem mon GDCD hien tai: " << a->s.GDCDTX1 << " " << a->s.GDCDTX2 << " " << a->s.GDCDGK << " " << a->s.GDCDCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.GDCDTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.GDCDTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.GDCDGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.GDCDCK;
+		}
+	}
+	// mon lich su
+	else if(x == 5){
+		cout << "Diem mon lich su hien tai: " << a->s.SuTX1 << " " << a->s.SuTX2 << " " << a->s.SuGK << " " << a->s.SuCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.SuTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.SuTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.SuGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.SuCK;
+		}
+	}
+	// mon dia li
+	else if(x == 6){
+		cout << "Diem mon dia li hien tai: " << a->s.DiaTX1 << " " << a->s.DiaTX2 << " " << a->s.DiaGK << " " << a->s.DiaCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.DiaTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.DiaTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.DiaGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.DiaCK;
+		}
+	}
+	// mon vat li
+	else if(x == 7){
+		cout << "Diem mon dia li hien tai: " << a->s.LiTX1 << " " << a->s.LiTX2 << " " << a->s.LiGK << " " << a->s.LiCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.LiTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.LiTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.LiGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.LiCK;
+		}
+	}
+	// mon hoa hoc
+	else if(x == 8){
+		cout << "Diem mon dia li hien tai: " << a->s.HoaTX1 << " " << a->s.HoaTX2 << " " << a->s.HoaGK << " " << a->s.HoaCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.HoaTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.HoaTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.HoaGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.HoaCK;
+		}
+	}
+	// mon sinh hoc
+	else if(x == 9){
+		cout << "Diem mon dia li hien tai: " << a->s.SinhTX1 << " " << a->s.SinhTX2 << " " << a->s.SinhGK << " " << a->s.SinhCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.SinhTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.SinhTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.SinhGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.SinhCK;
+		}
+	}
+	// mon cong nghe
+	else if(x == 10){
+		cout << "Diem mon dia li hien tai: " << a->s.CNTX1 << " " << a->s.CNTX2 << " " << a->s.CNGK << " " << a->s.CNCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.CNTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.CNTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.CNGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.CNCK;
+		}
+	}
+	// mon tin hoc
+	else if(x == 11){
+		cout << "Diem mon dia li hien tai: " << a->s.TinTX1 << " " << a->s.TinTX2 << " " << a->s.TinGK << " " << a->s.TinCK << " " << endl;
+		cout << "Diem can sua: " << endl;
+		cout << "1.Diem thuong xuyen 1" << endl;
+		cout << "2.Diem thuong xuyen 2" << endl;
+		cout << "3.Diem giua ki" << endl;
+		cout << "4.Diem cuoi ki" << endl;
+		cout << "Nhap lua chon: "; cin >> lc;
+		if(lc == 1){
+			cout << "Diem moi: ";cin >> a->s.TinTX1;
+		}
+		else if(lc == 2){
+			cout << "Diem moi: ";cin >> a->s.TinTX2;
+		}
+		else if(lc == 3){
+			cout << "Diem moi: ";cin >> a->s.TinGK;
+		}
+		else if(lc == 4){
+			cout << "Diem moi: ";cin >> a->s.TinCK;
+		}
+	}
+	// 2 mon nghe thuat 
+	else if(x == 12){
+		cout << "Trang thai 2 mon hoc danh gia bang nhan xet: " << endl;
+		cout << "1.Mon Nghe thuat: " << a->s.Nghethuat << endl;
+		cout << "2.Mon The duc: " << a->s.Theduc << endl;
+		cout << "Nhap mon can sua: "; cin >> lc;
+		string sua;
+		if(lc == 1){
+			cout << "Nhap nhan xet cua mon Nghe thuat: " << endl;
+			getline(cin, sua); chuanhoa(sua);
+			a->s.Nghethuat = sua;
+		}
+		else if(lc == 2){
+			cout << "Nhap nhan xet cua mon The duc: " << endl;
+			getline(cin, sua); chuanhoa(sua);
+			a->s.Theduc = sua;
+		}
+	}
+	
 }
 
 
@@ -842,6 +1034,7 @@ int main(){
 			return 0;
 		}
 		else if(lc1 == 1){
+			int lc2;
 			
 		}
 	}
