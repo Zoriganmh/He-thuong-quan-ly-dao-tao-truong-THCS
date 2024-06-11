@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <fstream>
+
 using namespace std;
 
 
@@ -1024,6 +1026,69 @@ void thongkekhoi(hs a, int x){
 
 int main(){
 	hs head = NULL;
+	/*
+	Student s;
+
+	// nhap file
+	ifstream file;
+	file.open("Input.txt"); // mo file
+	int b;
+	file >> b;
+	for(int i = 0; i < b; i++){
+		file >> s.khoilop;
+		file.ignore(); getline(file, s.name);
+		file >> s.stt;
+		file.ignore(); getline(file, s.HanhKiem);
+		// mon toan
+		file >> s.ToanTX1 >> s.ToanTX2 >> s.ToanGK >> s.ToanCK;
+		s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
+		// mon van
+		file >> s.VanTX1 >> s.VanTX2 >> s.VanGK >> s.VanCK;
+		s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
+		// mon ngoai ngu
+		file >> s.NNTX1 >> s.NNTX2 >> s.NNGK >> s.NNCK;
+		s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
+		// mon GDCD
+		file >> s.GDCDTX1 >> s.GDCDTX2 >> s.GDCDGK >> s.GDCDCK;
+		s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
+		// mon lich su
+		file >> s.SuTX1 >> s.SuTX2 >> s.SuGK >> s.SuCK;
+		s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
+		// mon dia li
+		file >> s.DiaTX1 >> s.DiaTX2 >> s.DiaGK >> s.DiaCK;
+		s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
+		// mon vat li
+		file >> s.LiTX1 >> s.LiTX2 >> s.LiGK >> s.LiCK;
+		s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
+		// mon hoa hoc
+		file >> s.HoaTX1 >> s.HoaTX2 >> s.HoaGK >> s.HoaCK;
+		s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
+		// mon sinh hoc
+		file >> s.SinhTX1 >> s.SinhTX2 >> s.SinhGK >> s.SinhCK;
+		s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
+		// mon cong nghe
+		file >> s.CNTX1 >> s.CNTX2 >> s.CNGK >> s.CNCK;
+		s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
+		// mon tin hoc
+		file >> s.TinTX1 >> s.TinTX2 >> s.TinGK >> s.TinCK;
+		s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
+		// 2 mon danh gia bang nhan xet
+		file.ignore(); getline(file, s.Nghethuat);
+		file.ignore(); getline(file, s.Theduc);
+		
+		s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
+		
+		hs tmp = new HS();
+		tmp->s = s;
+		tmp->next = NULL;
+		head = tmp;
+		head = head->next;
+	}
+	// dong file
+	file.close();  
+	*/
+	
+	
 	while(1){
 		cout << "Ban la:" << endl;
 		cout << "1.Hoc sinh" << endl;
