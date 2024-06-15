@@ -514,22 +514,72 @@ void sapxep4(hs &h) {
 }
  // Sap xep theo TB mon hoc tu cao xuong thap
 	//Mon Toan
-	void sapxeptoan(hs &h) {
- 	hs p = h;
-	for (p; p->next = NULL; p = p->next)
-	{
+	void sapxepTBmontheokhoi(hs &a, int x) {
+		int lc;
+ 		cout << "Danh sach sinh vien sap xep theo TB mon: " << endl;
+		cout << "1.Mon Toan: " << a->s.ToanTB << endl;
+		cout << "2.Mon Van: " << a->s.VanTB << endl;
+		cout << "3.Mon NN: " << a->s.NNTB << endl;
+		cout << "4.Mon Li: " << a->s.LiTB << endl;
+		cout << "5.Mon Hoa: " << a->s.HoaTB << endl;
+		cout << "6.Mon Sinh: " << a->s.SinhTB << endl;
+		cout << "7.Mon GDCD: " << a->s.GDCDTB << endl;
+		cout << "8.Mon Su: " << a->s.SuTB << endl;
+		cout << "9.Mon Dia: " << a->s.DiaTB << endl;
+		cout << "10.Mon Tin: " << a->s.TinTB << endl;
+		cout << "11.Mon CN: " << a->s.CNTB << endl;
+		cout << "Nhap mon can xem: "; cin >> lc;
+		float k;
+		if(lc == 1){
+			k=s.ToanTB;
+		}
+		else if(lc == 2){
+			k=s.VanTB;
+		}
+		else if(lc == 3){
+			k=s.NNTB;
+		}
+		else if(lc == 4){
+			k=s.LiTB;
+		}
+		else if(lc == 5){
+			k=s.HoaTB;
+		}
+		else if(lc == 6){
+			k=s.SinhTB;
+		}
+		else if(lc == 7){
+			k=s.GDCDTB;
+		}
+		else if(lc == 8){
+			k=s.SuTB;
+		}
+		else if(lc == 9){
+			k=s.DiaTB;
+		}
+		else if(lc == 10){
+			k=s.TinTB;
+		}
+		else if(lc == 11){
+			k=s.CNTB;
+		}
+		hs p = a;
+		for (p; p->next = NULL; p = p->next)
+		{
 		hs max = p;
 		for (hs q = p->next; q != NULL; q = q->next)
 		{
-			if (q->s.ToanTB > max->s.ToanTB){
+			if (q->k > max->k){
 				max = q;
 			}
-			if(q->s.ToanTB == max->s.ToanTB){
-				sapxep3(h);	}
-		int tmp = max->s.ToanTB;
-		max->s = p->s;
-		p->s.ToanTB = tmp;
-		}}}
+			if(q->k == max->k){
+				sapxep3(a);	}
+		int tmp = max->k;
+		max->k = p->k;
+		p->k = tmp;
+		}
+		}
+
 // duyet 1 hoc sinh
 void duyeths(Student s)
 {
@@ -541,7 +591,7 @@ void duyeths(Student s)
 	cout << "Mon Toan: " << s.ToanTX1 << " " << s.ToanTX2 << " " << s.ToanGK << " " << s.ToanCK << " " << s.ToanTB << endl;
 	cout << "Mon Ngu Van: " << s.VanTX1 << " " << s.VanTX2 << " " << s.VanGK << " " << s.VanCK << " " << s.VanTB << endl;
 	cout << "Mon Ngoai Ngu: " << s.NNTX1 << " " << s.NNTX2 << " " << s.NNGK << " " << s.NNCK << " " << s.NNTB << endl;
-	cout << "Mon Giao duc cong dan: " << s.GDCDTX1 << " " << s.GDCDTX2 << " " << s.GDCDGK << " " << s.GDCDCK << " " << s.GDCDTB << endl;
+	cout << "Mon GDCD: " << s.GDCDTX1 << " " << s.GDCDTX2 << " " << s.GDCDGK << " " << s.GDCDCK << " " << s.GDCDTB << endl;
 	cout << "Mon Lich Su: " << s.SuTX1 << " " << s.SuTX2 << " " << s.SuGK << " " << s.SuCK << " " << s.SuTB << endl;
 	cout << "Mon Dia Li: " << s.DiaTX1 << " " << s.DiaTX2 << " " << s.DiaGK << " " << s.DiaCK << " " << s.DiaTB << endl;
 	cout << "Mon Vat Ly: " << s.LiTX1 << " " << s.LiTX2 << " " << s.LiGK << " " << s.LiCK << " " << s.LiTB << endl;
@@ -580,7 +630,15 @@ void duyetdskhoi(hs a, int x){
 	}
 	cout << endl;
 } 
+//Duyet danh sach hoc sinh theo TB mon hoc
+void duyethstheoToanTB(Student s)
+{
 
+	cout << "Ho Ten: " << s.name << endl;
+	cout << "Khoi lop: " << s.khoilop << endl;
+	cout << "TBmon: " << s. << endl;
+
+}
 
 // tim kiem hoc sinh co khoi lop cho truoc
 void findhs1(hs a, int x)
@@ -1147,8 +1205,8 @@ int main(){
 	
 	while(1){
 		cout << "Ban la:" << endl;
-		cout << "1.Hoc sinh" << endl;
-		cout << "2.Giao vien" << endl;
+		cout << "1.Giao vien" << endl;
+		cout << "2.Phu huynh" << endl;
 		cout << "0.Thoat" << endl;
 		int lc1; cout << "Nhap lua chon: "; cin >> lc1;
 		if(lc1 == 0){
