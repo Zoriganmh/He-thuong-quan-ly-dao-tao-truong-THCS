@@ -514,22 +514,72 @@ void sapxep4(hs &h) {
 }
  // Sap xep theo TB mon hoc tu cao xuong thap
 	//Mon Toan
-	void sapxeptoan(hs &h) {
- 	hs p = h;
-	for (p; p->next = NULL; p = p->next)
-	{
+	void sapxepTBmontheokhoi(hs &a, int x) {
+		int lc;
+ 		cout << "Danh sach sinh vien sap xep theo TB mon: " << endl;
+		cout << "1.Mon Toan: " << a->s.ToanTB << endl;
+		cout << "2.Mon Van: " << a->s.VanTB << endl;
+		cout << "3.Mon NN: " << a->s.NNTB << endl;
+		cout << "4.Mon Li: " << a->s.LiTB << endl;
+		cout << "5.Mon Hoa: " << a->s.HoaTB << endl;
+		cout << "6.Mon Sinh: " << a->s.SinhTB << endl;
+		cout << "7.Mon GDCD: " << a->s.GDCDTB << endl;
+		cout << "8.Mon Su: " << a->s.SuTB << endl;
+		cout << "9.Mon Dia: " << a->s.DiaTB << endl;
+		cout << "10.Mon Tin: " << a->s.TinTB << endl;
+		cout << "11.Mon CN: " << a->s.CNTB << endl;
+		cout << "Nhap mon can xem: "; cin >> lc;
+		float k;
+		if(lc == 1){
+			k=s.ToanTB;
+		}
+		else if(lc == 2){
+			k=s.VanTB;
+		}
+		else if(lc == 3){
+			k=s.NNTB;
+		}
+		else if(lc == 4){
+			k=s.LiTB;
+		}
+		else if(lc == 5){
+			k=s.HoaTB;
+		}
+		else if(lc == 6){
+			k=s.SinhTB;
+		}
+		else if(lc == 7){
+			k=s.GDCDTB;
+		}
+		else if(lc == 8){
+			k=s.SuTB;
+		}
+		else if(lc == 9){
+			k=s.DiaTB;
+		}
+		else if(lc == 10){
+			k=s.TinTB;
+		}
+		else if(lc == 11){
+			k=s.CNTB;
+		}
+		hs p = a;
+		for (p; p->next = NULL; p = p->next)
+		{
 		hs max = p;
 		for (hs q = p->next; q != NULL; q = q->next)
 		{
-			if (q->s.ToanTB > max->s.ToanTB){
+			if (q->k > max->k){
 				max = q;
 			}
-			if(q->s.ToanTB == max->s.ToanTB){
-				sapxep3(h);	}
-		int tmp = max->s.ToanTB;
-		max->s = p->s;
-		p->s.ToanTB = tmp;
-		}}}
+			if(q->k == max->k){
+				sapxep3(a);	}
+		int tmp = max->k;
+		max->k = p->k;
+		p->k = tmp;
+		}
+		}
+
 // duyet 1 hoc sinh
 void duyeths(Student s)
 {
@@ -541,7 +591,7 @@ void duyeths(Student s)
 	cout << "Mon Toan: " << s.ToanTX1 << " " << s.ToanTX2 << " " << s.ToanGK << " " << s.ToanCK << " " << s.ToanTB << endl;
 	cout << "Mon Ngu Van: " << s.VanTX1 << " " << s.VanTX2 << " " << s.VanGK << " " << s.VanCK << " " << s.VanTB << endl;
 	cout << "Mon Ngoai Ngu: " << s.NNTX1 << " " << s.NNTX2 << " " << s.NNGK << " " << s.NNCK << " " << s.NNTB << endl;
-	cout << "Mon Giao duc cong dan: " << s.GDCDTX1 << " " << s.GDCDTX2 << " " << s.GDCDGK << " " << s.GDCDCK << " " << s.GDCDTB << endl;
+	cout << "Mon GDCD: " << s.GDCDTX1 << " " << s.GDCDTX2 << " " << s.GDCDGK << " " << s.GDCDCK << " " << s.GDCDTB << endl;
 	cout << "Mon Lich Su: " << s.SuTX1 << " " << s.SuTX2 << " " << s.SuGK << " " << s.SuCK << " " << s.SuTB << endl;
 	cout << "Mon Dia Li: " << s.DiaTX1 << " " << s.DiaTX2 << " " << s.DiaGK << " " << s.DiaCK << " " << s.DiaTB << endl;
 	cout << "Mon Vat Ly: " << s.LiTX1 << " " << s.LiTX2 << " " << s.LiGK << " " << s.LiCK << " " << s.LiTB << endl;
@@ -580,7 +630,15 @@ void duyetdskhoi(hs a, int x){
 	}
 	cout << endl;
 } 
+//Duyet danh sach hoc sinh theo TB mon hoc
+void duyethstheoToanTB(Student s)
+{
 
+	cout << "Ho Ten: " << s.name << endl;
+	cout << "Khoi lop: " << s.khoilop << endl;
+	cout << "TBmon: " << s. << endl;
+
+}
 
 // tim kiem hoc sinh co khoi lop cho truoc
 void findhs1(hs a, int x)
@@ -1147,8 +1205,8 @@ int main(){
 	
 	while(1){
 		cout << "Ban la:" << endl;
-		cout << "1.Hoc sinh" << endl;
-		cout << "2.Giao vien" << endl;
+		cout << "1.Giao vien" << endl;
+		cout << "2.Phu huynh" << endl;
 		cout << "0.Thoat" << endl;
 		int lc1; cout << "Nhap lua chon: "; cin >> lc1;
 		if(lc1 == 0){
@@ -1156,9 +1214,261 @@ int main(){
 		}
 		else if(lc1 == 1){
 			int lc2;
-			
-		}
-	}
+            do {
+                cout << "\n-----------------------\n";
+                cout << "1. Them hoc sinh\n";
+                cout << "2. Danh sach hoc sinh\n";
+				cout << "3. Tim kiem hoc sinh\n";
+				cout << "4. Xoa hoc sinh\n";
+				cout << "5. Thong ke hoc sinh\n";
+                cout << "6. Thoat\n";
+                cout << "Chon chuc nang: ";
+                cin >> lc2;
+                switch (lc2) {
+                    case 1:
+                        insertfirst(head);
+                        break;
+                    case 2: {
+						int lc21;
+						cout << "\n-----------------------\n";
+						cout << "1. Danh sach theo stt:\n";
+						cout << "2. Danh sach theo stt cua khoi lop:\n";
+						cout << "3. Danh sach theo ten:\n";
+						cout << "4. Danh sach theo TBM giam dan:\n";
+						cout << "5. Danh sach theo loai giam dan:\n";
+						cout << "6. Danh sach theo TB mon hoc theo khoi lop:\n";
+						cout << "Chon chuc nang: ";
+						cin >> lc21;
+                		switch (lc21) {
+                    	case 1: sapxep(head);
+						case 2: sapxep2(head);
+						case 3: sapxep1(head);
+						case 4: sapxep3(head);
+						case 5: sapxep4(head);
+						case 6:{
+							int khoilop;
+							cout<<"Khoi lop can xem danh sach:";
+							cin >> khoilop;
+							sapxepTBmontheokhoi(head,khoilop);
+						}
+						default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}    
+                    }
+                    case 3:{
+                        int lc31;
+						cout << "\n-----------------------\n";
+						cout << "1. Tim kiem hoc sinh:\n";
+						cout << "2. Sua thong tin hoc sinh:\n";
+						cout << "Chon chuc nang: ";
+						cin >> lc31;
+                		switch (lc31) {
+                    	case 1: {
+							int lc311;
+							cout << "\n-----------------------\n";
+							cout << "1. Tim kiem hoc sinh theo khoi lop va stt:\n";
+							cout << "2. Tim kiem hoc sinh theo ho va ten\n";
+							cin >> lc311;
+							switch (lc311) {
+							case 1: {
+							int stt, khoilop;
+							cout << "Nhap khoi lop hoc sinh can xem: ";
+							cin >> khoilop;
+							cout << "Nhap STT hoc sinh can xem: ";
+							cin >> stt;
+							hs tmp = head;
+									findhs2(tmp,khoilop,stt);}
+							case 2:{
+							string ten;
+							cout << "Ho va ten sinh can xem: "; cin.ignore();
+							getline(cin,ten);
+							chuanhoa(ten);
+							hs tmp = head;
+									findhs3(head,ten);	
+							}
+							default:
+							cout << "Chuc nang khong hop le, vui long chon lai.\n";
+							}
+							}
+						case 2:{
+							string ten;
+							cout << "Ho va ten sinh can sua: "; cin.ignore();
+							getline(cin,ten);
+							chuanhoa(ten);
+							int lcsua;
+							cout << "\n-----------------------\n";
+							cout << "1. Thong tin ca nhan:\n";
+							cout << "2. Diem mon Toan:\n";
+							cout << "3. Diem mon Van:\n";
+							cout << "4. Diem mon NN:\n";
+							cout << "5. Diem mon GDCD:\n";
+							cout << "6. Diem mon Lich Su:\n";
+							cout << "7. Diem mon Dia Ly:\n";
+							cout << "8. Diem mon Vat Ly:\n";
+							cout << "9. Diem mon Hoa Hoc:\n";
+							cout << "10. Diem mon Sinh Hoc:\n";
+							cout << "11. Diem mon Cong Nghe:\n";
+							cout << "12. Diem mon Tin Hoc:\n";
+							cout << "13. Diem 2 mon Nghe Thuat, The Duc:\n";
+							cout << "Chon muc can sua: ";
+							cin >> lcsua;
+							switch (lc41) {
+							case 1: sua(head,ten,0);
+							case 2: sua(head,ten,1);
+							case 3: sua(head,ten,2);
+							case 4: sua(head,ten,3);
+							case 5: sua(head,ten,4);
+							case 6: sua(head,ten,5);
+							case 7: sua(head,ten,6);
+							case 8: sua(head,ten,7);
+							case 9: sua(head,ten,8);
+							case 10: sua(head,ten,9);
+							case 11: sua(head,ten,10);
+							case 12: sua(head,ten,11);
+							case 13: sua(head,ten,12);
+							default:
+							cout << "Chuc nang khong hop le, vui long chon lai.\n";
+							}
+						}
+                        
+					}}
+                    case 4: {
+                        int lc41;
+						cout << "\n-----------------------\n";
+						cout << "1. Xoa hoc sinh o dau:\n";
+						cout << "2. Xoa hoc sinh o cuoi:\n";
+						cout << "3. Xoa hoc sinh theo khoi lop:\n";
+						cout << "4. Xoa hoc sinh theo ten:\n";
+						cout << "5. Xoa hoc sinh theo stt:\n";
+						cout << "6. Xoa hoc sinh theo stt trong khoi lop:\n";
+						cout << "Chon chuc nang: ";
+						cin >> lc41;
+                		switch (lc41) {
+                    	case 1: deletefirst(head);
+						case 2: deletelast(head);
+						case 3:{
+							int khoilop;
+							cout << "Khoi lop can xoa: ";
+							cin >>khoilop;
+                        	deletehs3(head,khoilop);
+						}
+						case 4:{
+							string ten;
+						cout << "Ho va ten hoc sinh can xoa: "; cin.ignore();
+						getline(cin,ten);
+						chuanhoa(ten);
+                        deletehs2(head,ten);
+						}
+						case 5:{
+							int stt;
+							cout << "STT can xoa: ";
+							cin >>stt;
+                        	deletehs4(head,stt);
+						}
+						case 6:{
+							int khoilop,stt;
+							cout << "Khoi lop can xoa: ";
+							cin >>khoilop;
+							cout << "STT can xoa: ";
+							cin >>stt;
+                        	deletehs1(head,khoilop,stt);
+						}
+						default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}
+                    }
+					case 5:{
+						int lc51;
+						cout << "\n-----------------------\n";
+						cout << "1. Thong ke hoc sinh toan truong:\n";
+						cout << "2. Thong ke hoc sinh theo khoi lop:\n";
+						cout << "Chon chuc nang: ";
+						cin >> lc51;
+                		switch (lc51) {
+                    	case 1: thongke(head);
+						case 2:{
+						int khoilop;
+						cout << "Khoi lop can xem: ";
+						cin >>khoilop;
+                        thongkekhoi(head,khoilop);
+						}
+						default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}
+					}
+                    case 6:
+                        cout << "Thoat menu giao vien.\n";
+                        break;
+                    default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+                }
+            } 
+        } else if (lc1 == 2) {
+            int lc3;
+                cout << "\n-----------------------\n";
+                cout << "1. Xem danh sach hoc sinh\n";
+                cout << "2. Xem chi tiet mot hoc sinh\n";
+                cout << "3. Thoat\n";
+                cout << "Chon chuc nang: ";
+                cin >> lc3;
+                switch (lc3) {
+					case 1:{
+					int lc5;
+						cout << "\n-----------------------\n";
+						cout << "1. Xem danh sach toan truong:\n";
+						cout << "2. Xem danh sach theo khoi lop\n";
+						cout << "Chon chuc nang: ";
+						cin >> lc5;
+                		switch (lc5) {
+                    	case 1: {
+							duyetds(head);
+						 }
+						case 2:{
+						int khoilop;
+						cout << "Khoi lop can xem: ";
+                        cin >> khoilop;
+                        duyetdskhoi(head,khoilop);
+						}
+						default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}
+                    }
+                    case 2: {
+						int lc4;
+						cout << "\n-----------------------\n";
+						cout << "1. Tim kiem hoc sinh theo khoi lop va stt:\n";
+						cout << "2. Tim kiem hoc sinh theo ho va ten\n";
+						cin >> lc4;
+                		switch (lc4) {
+                    	case 1: {
+                        int stt, khoilop;
+						cout << "Nhap khoi lop hoc sinh can xem: ";
+                        cin >> khoilop;
+                        cout << "Nhap STT hoc sinh can xem: ";
+                        cin >> stt;
+                        hs tmp = head;
+                                findhs2(tmp,khoilop,stt);}
+						case 2:{
+						string ten;
+						cout << "Ho va ten sinh can xem: "; cin.ignore();
+                        getline(cin,ten);
+						chuanhoa(ten);
+                        hs tmp = head;
+                                findhs3(head,ten);	
+						}
+						default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}}
+                    default:
+                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+                }
+            } 
+    	else {
+            cout << "Lua chon khong hop le, vui long chon lai.\n";
+        }
+    }
+    return 0;
+}
 }
 
 	
