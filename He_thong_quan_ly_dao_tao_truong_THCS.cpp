@@ -473,8 +473,63 @@ void sapxep1(hs &h){
 		p->s.name = tmp;
 	}
 }
+ // Sap xep hoc sinh theo TBmon
+void sapxep3(hs &h) {
+ 	hs p = h;
+	for (p; p->next = NULL; p = p->next)
+	{
+		hs max = p;
+		for (hs q = p->next; q != NULL; q = q->next)
+		{
+			if (q->s.TBmon > max->s.TBmon){
+				max = q;
+			}
+			if(q->s.TBmon == max->s.TBmon){
+				sapxep1(h);	}
+		int tmp = max->s.TBmon;
+		max->s = p->s;
+		p->s.TBmon = tmp;
+	}
+}}
 
-
+//Sap xep theo loai hoc sinh (tu gioi den yeu)
+void sapxep4(hs &h) {
+ 	hs p = h;
+	for (p; p->next = NULL; p = p->next)
+	{
+		hs min = p;
+		for (hs q = p->next; q != NULL; q = q->next)
+		{
+			if (q->s.loai < min->s.loai)
+			{
+				min = q;
+			}
+			if(q->s.loai == min->s.loai){
+				sapxep3(h);}
+		}
+		int tmp = min->s.loai;
+		min->s = p->s;
+		p->s.loai = tmp;
+	}
+}
+ // Sap xep theo TB mon hoc tu cao xuong thap
+	//Mon Toan
+	void sapxeptoan(hs &h) {
+ 	hs p = h;
+	for (p; p->next = NULL; p = p->next)
+	{
+		hs max = p;
+		for (hs q = p->next; q != NULL; q = q->next)
+		{
+			if (q->s.ToanTB > max->s.ToanTB){
+				max = q;
+			}
+			if(q->s.ToanTB == max->s.ToanTB){
+				sapxep3(h);	}
+		int tmp = max->s.ToanTB;
+		max->s = p->s;
+		p->s.ToanTB = tmp;
+		}}}
 // duyet 1 hoc sinh
 void duyeths(Student s)
 {
@@ -1022,6 +1077,7 @@ void thongkekhoi(hs a, int x){
 
 
 // hoc sinh chuyen lop
+
 
 
 int main(){
