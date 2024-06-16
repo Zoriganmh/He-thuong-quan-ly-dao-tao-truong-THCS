@@ -1752,6 +1752,17 @@ int main(){
 			}
             else if(lc2 == 1){
                 insertfirst(head);
+				int lc212;
+				cout <<"1. Them tiep."<<endl;
+				cout <<"2. Quay lai."<<endl;
+				cout << "Chon lua chon: ";
+				cin>>lc212;
+				if(lc212==1){
+					continue;
+				}
+				else if (lc212==2){
+					break;
+				}
         	}	
             else if(lc2 == 2){
             	int lc3;
