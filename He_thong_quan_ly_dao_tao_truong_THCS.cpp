@@ -166,7 +166,7 @@ hs makehs()
 	cout << "\n-----------------------\n";
 	cout << "Mon Nghe Thuat:\n";
 	cout << "Neu hoc sinh Dat -> Nhap: Dat\n ";
-	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat\n";
+	cout << "Neu hoc sinh Khong Dat -> Nhap: Khong Dat\n";
 	string nghethuat;
 	cin.ignore(); getline(cin, nghethuat);
 	chuanhoa(nghethuat); s.Nghethuat = nghethuat;
@@ -433,9 +433,9 @@ void sapxep(hs &h)
 				min = q;
 			}
 		}
-		int tmp = min->s.stt;
+		Student tmp = min->s;
 		min->s = p->s;
-		p->s.stt = tmp;
+		p->s = tmp;
 	}
 }
 
@@ -453,9 +453,9 @@ void sapxep2(hs &h){
 				min = q;
 			}
 		}
-		int tmp = min->s.khoilop;
+		Student tmp = min->s;
 		min->s = p->s;
-		p->s.khoilop = tmp;
+		p->s = tmp;
 	}
 }
 
@@ -491,9 +491,9 @@ void sapxep1(hs &h){
 				}
 			}
 		}
-		string tmp = min->s.name;
+		Student tmp = min->s;
 		min->s = p->s;
-		p->s.name = tmp;
+		p->s = tmp;
 	}
 }
  // Sap xep hoc sinh theo TBmon
@@ -509,9 +509,9 @@ void sapxep3(hs &h) {
 			}
 			if(q->s.TBmon == max->s.TBmon){
 				sapxep1(h);	}
-		int tmp = max->s.TBmon;
+		Student tmp = max->s;
 		max->s = p->s;
-		p->s.TBmon = tmp;
+		p->s = tmp;
 	}
 }}
 
@@ -528,11 +528,12 @@ void sapxep4(hs &h){
 				min = q;
 			}
 			if(q->s.loai == min->s.loai){
-				sapxep3(h);}
+				sapxep3(h);
+			}
 		}
-		int tmp = min->s.loai;
+		Student tmp = min->s;
 		min->s = p->s;
-		p->s.loai = tmp;
+		p->s = tmp;
 	}
 }
  // Sap xep theo TB mon hoc tu cao xuong thap
@@ -576,13 +577,12 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.ToanTB << endl;	
+				cout <<"Diem trung binh mon Toan: " << l->s.ToanTB << endl;	
 			}
-		}
 	}
 	// mon van
 	else if(lc == 2){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.VanTB > max->s.VanTB){
@@ -602,13 +602,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.VanTB << endl;	
+				cout <<"Diem trung binh mon Ngu Van: " << l->s.VanTB << endl;	
 			}
 		}
 	}
 	// mon ngoai ngu
 	else if(lc == 3){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.NNTB > max->s.NNTB){
@@ -628,13 +628,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.NNTB << endl;	
+				cout <<"Diem trung binh mon Ngoai Ngu: " << l->s.NNTB << endl;	
 			}
 		}
 	}
 	// mon vat li
 	else if(lc == 4){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.LiTB > max->s.LiTB){
@@ -654,13 +654,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.LiTB << endl;	
+				cout <<"Diem trung binh mon Vat Li: " << l->s.LiTB << endl;	
 			}
 		}
 	}
 	// mon hoa hoc
 	else if(lc == 5){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.HoaTB > max->s.HoaTB){
@@ -680,13 +680,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.HoaTB << endl;	
+				cout <<"Diem trung binh mon Hoa Hoc: " << l->s.HoaTB << endl;	
 			}
 		}
 	}
 	// mon sinh hoc
 	else if(lc == 6){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.SinhTB > max->s.SinhTB){
@@ -706,13 +706,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.SinhTB << endl;	
+				cout <<"Diem trung binh mon Sinh Hoc: " << l->s.SinhTB << endl;	
 			}
 		}
 	}
 	// mon giao duc cong dan
 	else if(lc == 7){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.GDCDTB > max->s.GDCDTB){
@@ -732,13 +732,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.GDCDTB << endl;	
+				cout <<"Diem trung binh mon Giao Duc Cong Dan: " << l->s.GDCDTB << endl;	
 			}
 		}
 	}
 	// mon lich su
 	else if(lc == 8){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.SuTB > max->s.SuTB){
@@ -758,13 +758,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.SuTB << endl;	
+				cout <<"Diem trung binh mon Lich Su: " << l->s.SuTB << endl;	
 			}
 		}
 	}
 	// mon dia li
 	else if(lc == 9){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.DiaTB > max->s.DiaTB){
@@ -784,13 +784,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.DiaTB << endl;	
+				cout <<"Diem trung binh mon Dia Li: " << l->s.DiaTB << endl;	
 			}
 		}
 	}
 	// mon tin hoc
 	else if(lc == 10){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.TinTB > max->s.TinTB){
@@ -810,13 +810,13 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.TinTB << endl;	
+				cout <<"Diem trung binh mon Tin Hoc: " << l->s.TinTB << endl;	
 			}
 		}
 	}
 	// mon cong nghe
 	else if(lc == 11){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.CNTB > max->s.CNTB){
@@ -836,7 +836,7 @@ void sapxepTBmontheokhoi(hs &a, int x){
 			if(l->s.khoilop == x){
 				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
 				cout <<"Ho Ten: " << l->s.name << endl;
-				cout <<"Diem trung binh mon toan: " << l->s.CNTB << endl;	
+				cout <<"Diem trung binh mon Cong nghe: " << l->s.CNTB << endl;	
 			}
 		}
 	}
@@ -1384,8 +1384,9 @@ void thongke(hs a){
 // thong ke hoc sinh theo khoi lop
 void thongkekhoi(hs a, int x){
 	float dem1 = 0, dem2 = 0, dem3 = 0, dem4 = 0, dem5 = 0;
-	int n = Sizehs(a);
 	hs p = a;
+	int n = Sizehs(a);
+	int dem;
 	while(p->next != NULL){
 		if(a->s.khoilop == x){
 			if(a->s.loai == 1) ++dem1;
@@ -1393,6 +1394,7 @@ void thongkekhoi(hs a, int x){
 			if(a->s.loai == 3) ++dem3;
 			if(a->s.loai == 4) ++dem4;
 			if(a->s.loai == 5) ++dem5;
+			++ dem;
 		}
 		p = p->next;
 	}
@@ -1402,7 +1404,7 @@ void thongkekhoi(hs a, int x){
 	float tbyeu = dem4 / n * 100;
 	float tbdup = dem5 / n * 100;
 	
-	cout << "Khoi lop " << x  << " tong cong " << n << " hoc sinh" << endl;
+	cout << "Khoi lop " << x  << " tong cong " << dem << " hoc sinh" << endl;
 	cout << dem1 << " hoc sinh gioi chiem " << tbgioi << " %" << endl;
 	cout << dem2 << " hoc sinh kha chiem " << tbkha << " %" << endl;
 	cout << dem3 << " hoc sinh trung binh chiem " << tbtb << " %" << endl;
@@ -1779,11 +1781,7 @@ int main(){
 					return 0;
 				}
 				else if(lc3 == 1){
-					sapxep1(head);
-					duyetdskhoi(head,6);
-					duyetdskhoi(head,7);
-					duyetdskhoi(head,8);
-					duyetdskhoi(head,9);
+					duyetds(head);
 				}
 				else if(lc3 == 2){
 					sapxep2(head);
