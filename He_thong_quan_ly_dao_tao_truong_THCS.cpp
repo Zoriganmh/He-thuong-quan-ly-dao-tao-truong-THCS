@@ -55,95 +55,118 @@ hs makehs()
 {
 	Student s;
 	cout << "Nhap thong tin hoc sinh:\n";
-	cout << "Nhap khoi lop:"; cin >> s.khoilop;
+	cout << "Nhap khoi lop: "; cin >> s.khoilop;
 	string name;
-	cout << "Nhap ten sinh vien:"; cin.ignore();
+	cout << "Nhap ten sinh vien: "; cin.ignore();
 	getline(cin, name);
 	chuanhoa(name); s.name = name;
-	cout << "Nhap STT hoc sinh:"; cin >> s.stt;
+	cout << "Nhap STT hoc sinh: "; cin >> s.stt;
 	cout << "Hanh kiem hoc sinh: \n"; 
-	cout << "(Tot, Kha, Trung binh, Yeu";
+	cout << "(Tot, Kha, Trung binh, Yeu)\n";
 	string hanhkiem;
 	cin.ignore(); getline(cin, hanhkiem);
 	chuanhoa(hanhkiem); s.HanhKiem = hanhkiem;
 	cout << "Nhap diem cac mon hoc:\n";
 	
 	cout << "Mon toan:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.ToanTX1 >> s.ToanTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.ToanTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.ToanTX2;
 	cout << "Diem giua ki: "; cin >> s.ToanGK;
 	cout << "Diem cuoi ki: "; cin >> s.ToanCK;
 	s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Ngu Van:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.VanTX1 >> s.VanTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.VanTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.VanTX2;
 	cout << "Diem giua ki: "; cin >> s.VanGK;
 	cout << "Diem cuoi ki: "; cin >> s.VanCK;
 	s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Ngoai Ngu:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.NNTX1 >> s.NNTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.NNTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.NNTX2;
 	cout << "Diem giua ki: "; cin >> s.NNGK;
 	cout << "Diem cuoi ki: "; cin >> s.NNCK;
 	s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Giao Duc Cong Dan:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.GDCDTX1 >> s.GDCDTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.GDCDTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.GDCDTX2;
 	cout << "Diem giua ki: "; cin >> s.GDCDGK;
 	cout << "Diem cuoi ki: "; cin >> s.GDCDCK;
 	s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Lich Su:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.SuTX1 >> s.SuTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.SuTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.SuTX2;
 	cout << "Diem giua ki: "; cin >> s.SuGK;
 	cout << "Diem cuoi ki: "; cin >> s.SuCK;
 	s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Dia ly:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.DiaTX1 >> s.DiaTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.DiaTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.DiaTX2;
 	cout << "Diem giua ki: "; cin >> s.DiaGK;
 	cout << "Diem cuoi ki: "; cin >> s.DiaCK;
 	s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
 	
-	cout << "Mon Vat Ly:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.LiTX1 >> s.LiTX2;
+	cout << "\n-----------------------\n";
+	cout << "Mon Vat Li: \n";
+	cout << "Diem thuong xuyen 1: "; cin >> s.LiTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.LiTX2;
 	cout << "Diem giua ki: "; cin >> s.LiGK;
 	cout << "Diem cuoi ki: "; cin >> s.LiCK;
 	s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Hoa Hoc:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.HoaTX1 >> s.HoaTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.HoaTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.HoaTX2;
 	cout << "Diem giua ki: "; cin >> s.HoaGK;
 	cout << "Diem cuoi ki: "; cin >> s.HoaCK;
 	s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Sinh Hoc:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.SinhTX1 >> s.SinhTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.SinhTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.SinhTX2;
 	cout << "Diem giua ki: "; cin >> s.SinhGK;
 	cout << "Diem cuoi ki: "; cin >> s.SinhCK;
 	s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Cong Nghe:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.CNTX1 >> s.CNTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.CNTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.CNTX2;
 	cout << "Diem giua ki: "; cin >> s.CNGK;
 	cout << "Diem cuoi ki: "; cin >> s.CNCK;
 	s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Tin Hoc:\n";
-	cout << "Diem thuong xuyen: "; cin >> s.TinTX1 >> s.TinTX2;
+	cout << "Diem thuong xuyen 1: "; cin >> s.TinTX1; 
+	cout << "Diem thuong xuyen 2: "; cin >> s.TinTX2;
 	cout << "Diem giua ki: "; cin >> s.TinGK;
 	cout << "Diem cuoi ki: "; cin >> s.TinCK;
 	s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon The Duc:\n";
-	cout << "Neu hoc sinh Dat -> Nhap: Dat";
-	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
+	cout << "Neu hoc sinh Dat -> Nhap: Dat\n";
+	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat\n";
 	string theduc;
 	cin.ignore(); getline(cin, theduc);
 	chuanhoa(theduc); s.Theduc = theduc;
 	
+	cout << "\n-----------------------\n";
 	cout << "Mon Nghe Thuat:\n";
-	cout << "Neu hoc sinh Dat -> Nhap: Dat";
-	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat";
+	cout << "Neu hoc sinh Dat -> Nhap: Dat\n ";
+	cout << "Neu hoc sinh khong Dat -> Nhap: Khong Dat\n";
 	string nghethuat;
 	cin.ignore(); getline(cin, nghethuat);
 	chuanhoa(nghethuat); s.Nghethuat = nghethuat;
@@ -417,7 +440,7 @@ void sapxep(hs &h)
 }
 
 
-// sap xep hoc sinh theo thu tu tang dan cua khoi lop 
+// sap xep hoc sinh theo thu tu tang dan cua khoi lop
 void sapxep2(hs &h){
 	hs p = h;
 	for (p; p->next = NULL; p = p->next)
@@ -493,7 +516,7 @@ void sapxep3(hs &h) {
 }}
 
 //Sap xep theo loai hoc sinh (tu gioi den yeu)
-void sapxep4(hs &h) {
+void sapxep4(hs &h){
  	hs p = h;
 	for (p; p->next = NULL; p = p->next)
 	{
@@ -514,75 +537,320 @@ void sapxep4(hs &h) {
 }
  // Sap xep theo TB mon hoc tu cao xuong thap
 	//Mon Toan
-	void sapxepTBmontheokhoi(hs &a, int x) {
-		int lc;
- 		cout << "Danh sach sinh vien sap xep theo TB mon: " << endl;
-		cout << "1.Mon Toan: " << a->s.ToanTB << endl;
-		cout << "2.Mon Van: " << a->s.VanTB << endl;
-		cout << "3.Mon NN: " << a->s.NNTB << endl;
-		cout << "4.Mon Li: " << a->s.LiTB << endl;
-		cout << "5.Mon Hoa: " << a->s.HoaTB << endl;
-		cout << "6.Mon Sinh: " << a->s.SinhTB << endl;
-		cout << "7.Mon GDCD: " << a->s.GDCDTB << endl;
-		cout << "8.Mon Su: " << a->s.SuTB << endl;
-		cout << "9.Mon Dia: " << a->s.DiaTB << endl;
-		cout << "10.Mon Tin: " << a->s.TinTB << endl;
-		cout << "11.Mon CN: " << a->s.CNTB << endl;
-		cout << "Nhap mon can xem: "; cin >> lc;
-		float k;
-		if(lc == 1){
-			k=s.ToanTB;
-		}
-		else if(lc == 2){
-			k=s.VanTB;
-		}
-		else if(lc == 3){
-			k=s.NNTB;
-		}
-		else if(lc == 4){
-			k=s.LiTB;
-		}
-		else if(lc == 5){
-			k=s.HoaTB;
-		}
-		else if(lc == 6){
-			k=s.SinhTB;
-		}
-		else if(lc == 7){
-			k=s.GDCDTB;
-		}
-		else if(lc == 8){
-			k=s.SuTB;
-		}
-		else if(lc == 9){
-			k=s.DiaTB;
-		}
-		else if(lc == 10){
-			k=s.TinTB;
-		}
-		else if(lc == 11){
-			k=s.CNTB;
-		}
-		hs p = a;
-		for (p; p->next = NULL; p = p->next)
-		{
-		hs max = p;
-		for (hs q = p->next; q != NULL; q = q->next)
-		{
-			if (q->k > max->k){
-				max = q;
+void sapxepTBmontheokhoi(hs &a, int x){
+	hs p = a;
+	int lc;
+ 	cout << "Danh sach sinh vien sap xep theo TB mon: " << endl;
+	cout << "1.Mon Toan: "  << endl;
+	cout << "2.Mon Van: " << endl;
+	cout << "3.Mon NN: " <<  endl;
+	cout << "4.Mon Li: " <<  endl;
+	cout << "5.Mon Hoa: " <<  endl;
+	cout << "6.Mon Sinh: " <<  endl;
+	cout << "7.Mon GDCD: " <<  endl;
+	cout << "8.Mon Su: " <<  endl;
+	cout << "9.Mon Dia: " <<  endl;
+	cout << "10.Mon Tin: " <<  endl;
+	cout << "11.Mon CN: " <<  endl;
+	cout << "Nhap mon can xem: "; cin >> lc;
+	float k;
+	// mon toan
+	if(lc == 1){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.ToanTB > max->s.ToanTB){
+					max = q;
+				}
+				if(q->s.ToanTB == max->s.ToanTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.ToanTB;
+				max->s.ToanTB = p->s.ToanTB;
+				p->s.ToanTB = tmp;
 			}
-			if(q->k == max->k){
-				sapxep3(a);	}
-		int tmp = max->k;
-		max->k = p->k;
-		p->k = tmp;
 		}
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.ToanTB << endl;	
+			}
 		}
+	}
+	// mon van
+	else if(lc == 2){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.VanTB > max->s.VanTB){
+					max = q;
+				}
+				if(q->s.VanTB == max->s.VanTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.VanTB;
+				max->s.VanTB = p->s.VanTB;
+				p->s.VanTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.VanTB << endl;	
+			}
+		}
+	}
+	// mon ngoai ngu
+	else if(lc == 3){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.NNTB > max->s.NNTB){
+					max = q;
+				}
+				if(q->s.NNTB == max->s.NNTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.NNTB;
+				max->s.NNTB = p->s.NNTB;
+				p->s.NNTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.NNTB << endl;	
+			}
+		}
+	}
+	// mon vat li
+	else if(lc == 4){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.LiTB > max->s.LiTB){
+					max = q;
+				}
+				if(q->s.LiTB == max->s.LiTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.LiTB;
+				max->s.LiTB = p->s.LiTB;
+				p->s.LiTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.LiTB << endl;	
+			}
+		}
+	}
+	// mon hoa hoc
+	else if(lc == 5){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.HoaTB > max->s.HoaTB){
+					max = q;
+				}
+				if(q->s.HoaTB == max->s.HoaTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.HoaTB;
+				max->s.HoaTB = p->s.HoaTB;
+				p->s.HoaTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.HoaTB << endl;	
+			}
+		}
+	}
+	// mon sinh hoc
+	else if(lc == 6){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.SinhTB > max->s.SinhTB){
+					max = q;
+				}
+				if(q->s.SinhTB == max->s.SinhTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.SinhTB;
+				max->s.SinhTB = p->s.SinhTB;
+				p->s.SinhTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.SinhTB << endl;	
+			}
+		}
+	}
+	// mon giao duc cong dan
+	else if(lc == 7){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.GDCDTB > max->s.GDCDTB){
+					max = q;
+				}
+				if(q->s.GDCDTB == max->s.GDCDTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.GDCDTB;
+				max->s.GDCDTB = p->s.GDCDTB;
+				p->s.GDCDTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.GDCDTB << endl;	
+			}
+		}
+	}
+	// mon lich su
+	else if(lc == 8){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.SuTB > max->s.SuTB){
+					max = q;
+				}
+				if(q->s.SuTB == max->s.SuTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.SuTB;
+				max->s.SuTB = p->s.SuTB;
+				p->s.SuTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.SuTB << endl;	
+			}
+		}
+	}
+	// mon dia li
+	else if(lc == 9){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.DiaTB > max->s.DiaTB){
+					max = q;
+				}
+				if(q->s.DiaTB == max->s.DiaTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.DiaTB;
+				max->s.DiaTB = p->s.DiaTB;
+				p->s.DiaTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.DiaTB << endl;	
+			}
+		}
+	}
+	// mon tin hoc
+	else if(lc == 10){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.TinTB > max->s.TinTB){
+					max = q;
+				}
+				if(q->s.TinTB == max->s.TinTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.TinTB;
+				max->s.TinTB = p->s.TinTB;
+				p->s.TinTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.TinTB << endl;	
+			}
+		}
+	}
+	// mon cong nghe
+	else if(lc == 11){
+		for (p; p->next = NULL; p = p->next){
+			hs max = p;
+			for(hs q = p->next; q != NULL; q = q->next){
+				if(q->s.CNTB > max->s.CNTB){
+					max = q;
+				}
+				if(q->s.CNTB == max->s.CNTB){
+					sapxep3(a);	
+				}
+				int tmp = max->s.CNTB;
+				max->s.CNTB = p->s.CNTB;
+				p->s.CNTB = tmp;
+			}
+		}	
+		hs l = a;
+		int f = 1;
+		for(l; l->next != NULL; l = l->next){
+			if(l->s.khoilop == x){
+				cout <<"Hoc sinh dung thu: " << f << endl; ++f;
+				cout <<"Ho Ten: " << l->s.name << endl;
+				cout <<"Diem trung binh mon toan: " << l->s.CNTB << endl;	
+			}
+		}
+	}
+}
+
+// duyet thong tin ca nhan 1 hoc sinh
+void duyettt(Student s){
+	cout << "Khoi lop: " << s.khoilop << endl;
+	cout << "Ho Ten: " << s.name << endl;
+	cout << "STT theo ds lop: " << s.stt << endl;	
+}
 
 // duyet 1 hoc sinh
-void duyeths(Student s)
-{
+void duyeths(Student s){
 	cout << "Khoi lop: " << s.khoilop << endl;
 	cout << "Ho Ten: " << s.name << endl;
 	cout << "STT theo ds lop: " << s.stt << endl;
@@ -630,15 +898,6 @@ void duyetdskhoi(hs a, int x){
 	}
 	cout << endl;
 } 
-//Duyet danh sach hoc sinh theo TB mon hoc
-void duyethstheoToanTB(Student s)
-{
-
-	cout << "Ho Ten: " << s.name << endl;
-	cout << "Khoi lop: " << s.khoilop << endl;
-	cout << "TBmon: " << s. << endl;
-
-}
 
 // tim kiem hoc sinh co khoi lop cho truoc
 void findhs1(hs a, int x)
@@ -646,12 +905,11 @@ void findhs1(hs a, int x)
 	hs p = a;
 	Student as = p->s;
 	int n = Sizehs(a);
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++){
 		p = p->next;
 		if (as.khoilop == x)
 		{
-			duyeths(p->s);
+			duyettt(p->s);
 		}
 	}
 }
@@ -667,7 +925,7 @@ void findhs2(hs a, int x, long y )
 		p = p->next;
 		if (as.khoilop == x && as.stt == y)
 		{
-			duyeths(p->s);
+			duyettt(p->s);
 		}
 	}
 }
@@ -677,13 +935,24 @@ void findhs3(hs a, string nem){
 	hs p = a;
 	Student as = p->s;
 	int n = Sizehs(a);
-	for (int i = 0; i < n; i++)
-	{
-		p = p->next;
-		if (as.name == nem)
-		{
-			duyeths(p->s);
+	for (int i = 0; i < n; i++){
+		if (as.name == nem){
+			duyettt(p->s);
 		}
+		p = p->next;
+	}
+}
+
+// tim kiem hoc sinh theo ten va khoi lop cho truoc
+void findhs4(hs a, string nem, int x){
+	hs p = a;
+	Student as = p->s;
+	int n = Sizehs(a);
+	for (int i = 0; i < n; i++){
+		if (as.name == nem && as.khoilop == x){
+			duyettt(p->s);
+		}
+		p = p->next;
 	}
 }
 
@@ -759,28 +1028,34 @@ void deletehs1(hs &h, int x, long y){
 }
 
 
-// xoa hoc sinh co ten cho truoc
-void deletehs2(hs &h, string nem){
+// xoa hoc sinh co ten cho truoc va khoi lop cho truoc
+void deletehs2(hs &h, string nem, int x){
 	int n = Sizehs(h);
 	hs p = h;
 	hs q = NULL;
+	chuanhoa(nem);
 	for(int i = 0 ; i < n ; i++){
-		if(p->s.name != nem){
+		if(p->s.khoilop == x && p->s.name == nem){
+			q->next = p->next;
+			break;
+		} else{
 			q = p;
 			p = p->next;
-		} else{
-			q->next = p->next;
-		break;
 		}
 	}
 }
 
 
-// sua thong tin hoc sinh co ten cho truoc
-void sua(hs &a,string y, int x){
+// sua thong tin hoc sinh co ten va khoi lop cho truoc
+void sua(hs &a,string y, int x, int k){
 	int lc;
-	// tim kiem hoc sinh co ten y
-	while(a->s.name != y){
+	// tim kiem hoc sinh co ten y va khoi lop k
+	hs p = a;
+	int n = Sizehs(a);
+	for(int i = 0; i < n; i++){
+		if(p->s.name == y && p->s.khoilop == k){
+			break;
+		}
 		a = a->next;
 	}
 	// sua nhung thong tin khac
@@ -1104,7 +1379,7 @@ void thongke(hs a){
 }
 
 
-// thong ke hoc sinh theo khoi lop 
+// thong ke hoc sinh theo khoi lop
 void thongkekhoi(hs a, int x){
 	float dem1 = 0, dem2 = 0, dem3 = 0, dem4 = 0, dem5 = 0;
 	int n = Sizehs(a);
@@ -1133,8 +1408,6 @@ void thongkekhoi(hs a, int x){
 	cout << dem5 << " hoc sinh dup chiem " << tbdup << " %" << endl;
 }
 
-
-// hoc sinh chuyen lop
 
 
 
@@ -1202,6 +1475,256 @@ int main(){
 	file.close();  
 	*/
 	
+	// san 3 hs
+	Student s;
+	
+	   	// hs thu 1
+	   	
+	   	s.khoilop = 8;
+	   	s.name = "Nong Van Den";
+	   	s.stt = 26;
+	   	s.HanhKiem = "Tot";
+	   	
+	   	s.ToanTX1 = 9;
+	   	s.ToanTX2 = 9;
+	   	s.ToanGK = 9;
+	   	s.ToanCK = 9;
+	   	
+	   	s.VanTX1 = 8;
+	   	s.VanTX2 = 8;
+	   	s.VanGK = 7;
+	   	s.VanCK = 6.5;
+	   	
+	   	s.NNTX1 = 9;
+	   	s.NNTX2 = 8;
+	   	s.NNGK = 6.5;
+	   	s.NNCK = 6;
+	   	
+	   	s.GDCDTX1 = 9;
+	   	s.GDCDTX2 = 10;
+	   	s.GDCDGK = 9;
+	   	s.GDCDCK = 9;
+	   	
+	   	s.SuTX1 = 9;
+	   	s.SuTX2 = 8;
+	   	s.SuGK = 8;
+	   	s.SuCK = 7.5;
+	   	
+	   	s.DiaTX1 = 9;
+	   	s.DiaTX2 = 10;
+	   	s.DiaGK = 9.5;
+	   	s.DiaCK = 9;
+	   	
+	   	s.LiTX1 = 9;
+	   	s.LiTX2 = 10;
+	   	s.LiGK = 8;
+	   	s.LiCK = 8;
+	   	
+	   	s.HoaTX1 = 9;
+	   	s.HoaTX2 = 10;
+	   	s.HoaGK = 9.5;
+	   	s.HoaCK = 9;
+	   	
+	   	s.SinhTX1 = 9;
+	   	s.SinhTX2 = 10;
+	   	s.SinhGK = 7.5;
+	   	s.SinhCK = 7;
+	   	
+	   	s.CNTX1 = 10;
+	   	s.CNTX2 = 10;
+	   	s.CNGK = 9;
+	   	s.CNCK = 10;
+	   	
+	   	s.TinTX1 = 10;
+		s.TinTX2 = 10;
+		s.TinGK = 10;
+		s.TinCK = 9.5; 
+		
+		s.Theduc = "Dat";
+		s.Nghethuat = "Dat";
+		
+		s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
+		s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
+		s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
+		s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
+		s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
+		s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
+		s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
+		s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
+		s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
+		s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
+		s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
+		s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
+			   	
+	  	hs tmp = new HS();
+		tmp->s = s;
+		tmp->next = NULL;
+		head = tmp;
+		
+		// hs thu 2
+	   	s.khoilop = 8;
+	   	s.name = "Cao Van Luong";
+	   	s.stt = 14;
+	   	s.HanhKiem = "Kha";
+	   	
+	   	s.ToanTX1 = 8;
+	   	s.ToanTX2 = 9;
+	   	s.ToanGK = 8;
+	   	s.ToanCK = 7;
+	   	
+	   	s.VanTX1 = 9;
+	   	s.VanTX2 = 8;
+	   	s.VanGK = 8.5;
+	   	s.VanCK = 8;
+	   	
+	   	s.NNTX1 = 9;
+	   	s.NNTX2 = 10;
+	   	s.NNGK = 8;
+	   	s.NNCK = 8.5;
+	   	
+	   	s.GDCDTX1 = 9;
+	   	s.GDCDTX2 = 10;
+	   	s.GDCDGK = 9;
+	   	s.GDCDCK = 9;
+	   	
+	   	s.SuTX1 = 9;
+	   	s.SuTX2 = 8;
+	   	s.SuGK = 8;
+	   	s.SuCK = 7.5;
+	   	
+	   	s.DiaTX1 = 9;
+	   	s.DiaTX2 = 10;
+	   	s.DiaGK = 9.5;
+	   	s.DiaCK = 9;
+	   	
+	   	s.LiTX1 = 8;
+	   	s.LiTX2 = 8;
+	   	s.LiGK = 7;
+	   	s.LiCK = 6.5;
+	   	
+	   	s.HoaTX1 = 8;
+	   	s.HoaTX2 = 7.5;
+	   	s.HoaGK = 7;
+	   	s.HoaCK = 6;
+	   	
+	   	s.SinhTX1 = 9;
+	   	s.SinhTX2 = 10;
+	   	s.SinhGK = 7.5;
+	   	s.SinhCK = 7;
+	   	
+	   	s.CNTX1 = 10;
+	   	s.CNTX2 = 10;
+	   	s.CNGK = 9;
+	   	s.CNCK = 10;
+	   	
+	   	s.TinTX1 = 10;
+		s.TinTX2 = 10;
+		s.TinGK = 10;
+		s.TinCK = 9.5; 
+		
+		s.Theduc = "Dat";
+		s.Nghethuat = "Dat";
+		
+		s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
+		s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
+		s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
+		s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
+		s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
+		s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
+		s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
+		s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
+		s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
+		s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
+		s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
+		s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
+			   	
+	  	hs tpp = new HS();
+		tpp->s = s;
+		tpp->next = NULL;
+		head->next = tpp;
+		
+		// hs thu 3
+		s.khoilop = 7;
+	   	s.name = "Phung Thanh Khoai";
+	   	s.stt = 26;
+	   	s.HanhKiem = "Kha";
+	   	
+	   	s.ToanTX1 = 7;
+	   	s.ToanTX2 = 8;
+	   	s.ToanGK = 7;
+	   	s.ToanCK = 7;
+	   	
+	   	s.VanTX1 = 9;
+	   	s.VanTX2 = 8;
+	   	s.VanGK = 8.5;
+	   	s.VanCK = 8;
+	   	
+	   	s.NNTX1 = 7;
+	   	s.NNTX2 = 8;
+	   	s.NNGK = 6;
+	   	s.NNCK = 5.5;
+	   	
+	   	s.GDCDTX1 = 9;
+	   	s.GDCDTX2 = 10;
+	   	s.GDCDGK = 9;
+	   	s.GDCDCK = 9;
+	   	
+	   	s.SuTX1 = 9;
+	   	s.SuTX2 = 8;
+	   	s.SuGK = 8;
+	   	s.SuCK = 7.5;
+	   	
+	   	s.DiaTX1 = 9;
+	   	s.DiaTX2 = 10;
+	   	s.DiaGK = 9.5;
+	   	s.DiaCK = 9;
+	   	
+	   	s.LiTX1 = 7;
+	   	s.LiTX2 = 7;
+	   	s.LiGK = 6;
+	   	s.LiCK = 6.5;
+	   	
+	   	s.HoaTX1 = 7;
+	   	s.HoaTX2 = 7;
+	   	s.HoaGK = 7;
+	   	s.HoaCK = 6;
+	   	
+	   	s.SinhTX1 = 9;
+	   	s.SinhTX2 = 10;
+	   	s.SinhGK = 7.5;
+	   	s.SinhCK = 7;
+	   	
+	   	s.CNTX1 = 10;
+	   	s.CNTX2 = 10;
+	   	s.CNGK = 9;
+	   	s.CNCK = 10;
+	   	
+	   	s.TinTX1 = 8;
+		s.TinTX2 = 9;
+		s.TinGK = 8;
+		s.TinCK = 8; 
+		
+		s.Theduc = "Dat";
+		s.Nghethuat = "Dat";
+		
+		s.ToanTB = s.ToanTX1*0.1 + s.ToanTX2*0.1 + s.ToanGK*0.3 + s.ToanCK*0.5;
+		s.VanTB = s.VanTX1*0.1 + s.VanTX2*0.1 + s.VanGK*0.3 + s.VanCK*0.5;
+		s.NNTB = s.NNTX1*0.1 + s.NNTX2*0.1 + s.NNGK*0.3 + s.NNCK*0.5;
+		s.GDCDTB = s.GDCDTX1*0.1 + s.GDCDTX2*0.1 + s.GDCDGK*0.3 + s.GDCDCK*0.5;
+		s.SuTB = s.SuTX1*0.1 + s.SuTX2*0.1 + s.SuGK*0.3 + s.SuCK*0.5;
+		s.DiaTB = s.DiaTX1*0.1 + s.DiaTX2*0.1 + s.DiaGK*0.3 + s.DiaCK*0.5;
+		s.LiTB = s.LiTX1*0.1 + s.LiTX2*0.1 + s.LiGK*0.3 + s.LiCK*0.5;
+		s.HoaTB = s.HoaTX1*0.1 + s.HoaTX2*0.1 + s.HoaGK*0.3 + s.HoaCK*0.5;
+		s.SinhTB = s.SinhTX1*0.1 + s.SinhTX2*0.1 + s.SinhGK*0.3 + s.SinhCK*0.5;
+		s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
+		s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
+		s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
+			   	
+	  	hs tkt = new HS();
+		tkt->s = s;
+		tkt->next = NULL;
+		head->next = tkt;
+		
 	
 	while(1){
 		cout << "Ban la:" << endl;
@@ -1214,262 +1737,334 @@ int main(){
 		}
 		else if(lc1 == 1){
 			int lc2;
-            do {
-                cout << "\n-----------------------\n";
-                cout << "1. Them hoc sinh\n";
-                cout << "2. Danh sach hoc sinh\n";
-				cout << "3. Tim kiem hoc sinh\n";
-				cout << "4. Xoa hoc sinh\n";
-				cout << "5. Thong ke hoc sinh\n";
-                cout << "6. Thoat\n";
-                cout << "Chon chuc nang: ";
-                cin >> lc2;
-                switch (lc2) {
-                    case 1:
-                        insertfirst(head);
-                        break;
-                    case 2: {
-						int lc21;
-						cout << "\n-----------------------\n";
-						cout << "1. Danh sach theo stt:\n";
-						cout << "2. Danh sach theo stt cua khoi lop:\n";
-						cout << "3. Danh sach theo ten:\n";
-						cout << "4. Danh sach theo TBM giam dan:\n";
-						cout << "5. Danh sach theo loai giam dan:\n";
-						cout << "6. Danh sach theo TB mon hoc theo khoi lop:\n";
-						cout << "Chon chuc nang: ";
-						cin >> lc21;
-                		switch (lc21) {
-                    	case 1: sapxep(head);
-						case 2: sapxep2(head);
-						case 3: sapxep1(head);
-						case 4: sapxep3(head);
-						case 5: sapxep4(head);
-						case 6:{
-							int khoilop;
-							cout<<"Khoi lop can xem danh sach:";
-							cin >> khoilop;
-							sapxepTBmontheokhoi(head,khoilop);
-						}
-						default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
-					}    
-                    }
-                    case 3:{
-                        int lc31;
-						cout << "\n-----------------------\n";
-						cout << "1. Tim kiem hoc sinh:\n";
-						cout << "2. Sua thong tin hoc sinh:\n";
-						cout << "Chon chuc nang: ";
-						cin >> lc31;
-                		switch (lc31) {
-                    	case 1: {
-							int lc311;
-							cout << "\n-----------------------\n";
-							cout << "1. Tim kiem hoc sinh theo khoi lop va stt:\n";
-							cout << "2. Tim kiem hoc sinh theo ho va ten\n";
-							cin >> lc311;
-							switch (lc311) {
-							case 1: {
-							int stt, khoilop;
-							cout << "Nhap khoi lop hoc sinh can xem: ";
-							cin >> khoilop;
-							cout << "Nhap STT hoc sinh can xem: ";
-							cin >> stt;
-							hs tmp = head;
-									findhs2(tmp,khoilop,stt);}
-							case 2:{
-							string ten;
-							cout << "Ho va ten sinh can xem: "; cin.ignore();
-							getline(cin,ten);
-							chuanhoa(ten);
-							hs tmp = head;
-									findhs3(head,ten);	
-							}
-							default:
-							cout << "Chuc nang khong hop le, vui long chon lai.\n";
-							}
-							}
-						case 2:{
-							string ten;
-							cout << "Ho va ten sinh can sua: "; cin.ignore();
-							getline(cin,ten);
-							chuanhoa(ten);
-							int lcsua;
-							cout << "\n-----------------------\n";
-							cout << "1. Thong tin ca nhan:\n";
-							cout << "2. Diem mon Toan:\n";
-							cout << "3. Diem mon Van:\n";
-							cout << "4. Diem mon NN:\n";
-							cout << "5. Diem mon GDCD:\n";
-							cout << "6. Diem mon Lich Su:\n";
-							cout << "7. Diem mon Dia Ly:\n";
-							cout << "8. Diem mon Vat Ly:\n";
-							cout << "9. Diem mon Hoa Hoc:\n";
-							cout << "10. Diem mon Sinh Hoc:\n";
-							cout << "11. Diem mon Cong Nghe:\n";
-							cout << "12. Diem mon Tin Hoc:\n";
-							cout << "13. Diem 2 mon Nghe Thuat, The Duc:\n";
-							cout << "Chon muc can sua: ";
-							cin >> lcsua;
-							switch (lc41) {
-							case 1: sua(head,ten,0);
-							case 2: sua(head,ten,1);
-							case 3: sua(head,ten,2);
-							case 4: sua(head,ten,3);
-							case 5: sua(head,ten,4);
-							case 6: sua(head,ten,5);
-							case 7: sua(head,ten,6);
-							case 8: sua(head,ten,7);
-							case 9: sua(head,ten,8);
-							case 10: sua(head,ten,9);
-							case 11: sua(head,ten,10);
-							case 12: sua(head,ten,11);
-							case 13: sua(head,ten,12);
-							default:
-							cout << "Chuc nang khong hop le, vui long chon lai.\n";
-							}
-						}
-                        
-					}}
-                    case 4: {
-                        int lc41;
-						cout << "\n-----------------------\n";
-						cout << "1. Xoa hoc sinh o dau:\n";
-						cout << "2. Xoa hoc sinh o cuoi:\n";
-						cout << "3. Xoa hoc sinh theo khoi lop:\n";
-						cout << "4. Xoa hoc sinh theo ten:\n";
-						cout << "5. Xoa hoc sinh theo stt:\n";
-						cout << "6. Xoa hoc sinh theo stt trong khoi lop:\n";
-						cout << "Chon chuc nang: ";
-						cin >> lc41;
-                		switch (lc41) {
-                    	case 1: deletefirst(head);
-						case 2: deletelast(head);
-						case 3:{
-							int khoilop;
-							cout << "Khoi lop can xoa: ";
-							cin >>khoilop;
-                        	deletehs3(head,khoilop);
-						}
-						case 4:{
-							string ten;
-						cout << "Ho va ten hoc sinh can xoa: "; cin.ignore();
-						getline(cin,ten);
-						chuanhoa(ten);
-                        deletehs2(head,ten);
-						}
-						case 5:{
-							int stt;
-							cout << "STT can xoa: ";
-							cin >>stt;
-                        	deletehs4(head,stt);
-						}
-						case 6:{
-							int khoilop,stt;
-							cout << "Khoi lop can xoa: ";
-							cin >>khoilop;
-							cout << "STT can xoa: ";
-							cin >>stt;
-                        	deletehs1(head,khoilop,stt);
-						}
-						default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+            cout << "\n-----------------------\n";
+            cout << "1. Them hoc sinh\n";
+            cout << "2. Danh sach hoc sinh\n";
+			cout << "3. Tim kiem va sua thong tin cua hoc sinh\n";
+			cout << "4. Xoa hoc sinh\n";
+			cout << "5. Thong ke hoc sinh\n";
+            cout << "6. Quay lai\n";
+            cout << "0.Thoat\n";
+            cout << "Chon chuc nang: ";
+            cin >> lc2;
+            if(lc2 == 0){
+            	return 0;
+			}
+            else if(lc2 == 1){
+                insertfirst(head);
+        	}	
+            else if(lc2 == 2){
+            	int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Danh sach hoc sinh toan truong:\n";
+				cout << "2. Danh sach hoc sinh khoi lop sap xep theo stt:\n";
+				cout << "3. Danh sach hoc sinh khoi lop sap xep theo ten:\n";
+				cout << "4. Danh sach hoc sinh khoi lop sap xep theo TBM giam dan:\n";
+				cout << "5. Danh sach hoc sinh khoi lop sap xep theo xep loai hoc sinh giam dan:\n";
+				cout << "6. Quay lai\n";
+				cout << "0.Thoat\n";
+				cout << "Chon chuc nang: ";
+				cin >> lc3;
+				if(lc3 == 0){
+					return 0;
+				}
+				else if(lc3 == 1){
+					sapxep1(head);
+					duyetdskhoi(head,6);
+					duyetdskhoi(head,7);
+					duyetdskhoi(head,8);
+					duyetdskhoi(head,9);
+				}
+				else if(lc3 == 2){
+					sapxep2(head);
+					int khoi;
+					cout << "Nhap khoi can xem: "; cin >> khoi;
+					duyetdskhoi(head, khoi);
+				}
+				else if(lc3 == 3){
+					sapxep1(head);
+					int khoi;
+					cout << "Nhap khoi can xem: "; cin >> khoi;
+					duyetdskhoi(head, khoi);
+				}
+				else if(lc3 == 4){
+					int khoi;
+					cout << "Nhap khoi can xem: "; cin >> khoi;
+					sapxepTBmontheokhoi(head,khoi);
+				}
+				else if(lc3 == 5){
+					sapxep4(head);
+					int khoi;
+					cout << "Nhap khoi can xem: "; cin >> khoi;
+					duyetdskhoi(head, khoi);
+				}
+				else if(lc3 == 6){
+					break;
+				}
+			}
+			else if(lc2 == 3){
+				int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Tim kiem hoc sinh:\n";
+				cout << "2. Sua thong tin hoc sinh:\n";
+				cout << "3. Quay lai\n";
+				cout << "4. Thoat\n";
+				cout << "Chon chuc nang: "; cin >> lc3;
+				if(lc3 == 0){
+					return 0;
+				}
+                else if(lc3 == 1){
+                	int lc4;
+					cout << "\n-----------------------\n";
+					cout << "1. Tim kiem hoc sinh theo khoi lop va stt\n";
+					cout << "2. Tim kiem hoc sinh theo ho va ten\n";
+					cout << "3. Tim kiem hoc sinh theo ten va khoi lop\n";
+					cout << "4. Quay lai\n";
+					cout << "0. Thoat\n";
+					cin >> lc4;
+					if(lc4 == 0){
+						return 0;
 					}
-                    }
-					case 5:{
-						int lc51;
-						cout << "\n-----------------------\n";
-						cout << "1. Thong ke hoc sinh toan truong:\n";
-						cout << "2. Thong ke hoc sinh theo khoi lop:\n";
-						cout << "Chon chuc nang: ";
-						cin >> lc51;
-                		switch (lc51) {
-                    	case 1: thongke(head);
-						case 2:{
+					else if(lc4 == 1){
+						int khoi; 
+						long stt;
+						cout << "Nhap khoi lop va stt cua hoc sinh: "; cin >> khoi >> stt;
+						findhs2(head,khoi,stt);
+					}
+					else if(lc4 == 2){
+						string nem;
+						cout << "Nhap ten hoc sinh: ";
+						getline(cin, nem);
+						chuanhoa(nem);
+						findhs3(head, nem);
+					}
+					else if(lc4 == 3){
+						string nem;
+						int khoi;
+						cout << "Nhap khoi lop cua hoc sinh: "; cin >> khoi;
+						cout << "Nhap ten hoc sinh: "; cin.ignore();
+						getline(cin, nem);
+						chuanhoa(nem);
+						findhs4(head, nem, khoi);
+					}
+					else if(lc4 == 4){
+						break;
+					}
+				}
+				else if(lc3 == 2){
+					string ten;
+					int khoi;
+					cout << "Nhap khoi lop cua hoc sinh: "; cin >> khoi;
+					cout << "Ho va ten sinh can sua: "; cin.ignore();
+					getline(cin,ten);
+					chuanhoa(ten);
+					int lcsua;
+					cout << "\n-----------------------\n";
+					cout << "1. Thong tin ca nhan:\n";
+					cout << "2. Diem mon Toan:\n";
+					cout << "3. Diem mon Van:\n";
+					cout << "4. Diem mon NN:\n";
+					cout << "5. Diem mon GDCD:\n";
+					cout << "6. Diem mon Lich Su:\n";
+					cout << "7. Diem mon Dia Ly:\n";
+					cout << "8. Diem mon Vat Ly:\n";
+					cout << "9. Diem mon Hoa Hoc:\n";
+					cout << "10. Diem mon Sinh Hoc:\n";
+					cout << "11. Diem mon Cong Nghe:\n";
+					cout << "12. Diem mon Tin Hoc:\n";
+					cout << "13. Diem 2 mon Nghe Thuat, The Duc:\n";
+					cout << "Chon muc can sua: ";
+					cin >> lcsua;
+					switch (lcsua){
+						case 1: 
+							sua(head,ten,0,khoi);
+							break;
+						case 2: 
+							sua(head,ten,1,khoi);
+							break;
+						case 3: 
+							sua(head,ten,2,khoi);
+							break;
+						case 4: 
+							sua(head,ten,3,khoi);
+							break;
+						case 5: 
+							sua(head,ten,4,khoi);
+							break;
+						case 6: 
+							sua(head,ten,5,khoi);
+							break;
+						case 7: 
+							sua(head,ten,6,khoi);
+							break;
+						case 8: 
+							sua(head,ten,7,khoi);
+							break;
+						case 9: 
+							sua(head,ten,8,khoi);
+							break;
+						case 10: 
+							sua(head,ten,9,khoi);
+							break;
+						case 11: 
+							sua(head,ten,10,khoi);
+							break;
+						case 12: 
+							sua(head,ten,11,khoi);
+							break;
+						case 13: 
+							sua(head,ten,12,khoi);
+							break;
+						default:
+							cout << "Chuc nang khong hop le, vui long chon lai.\n";
+					}
+				}				
+			}    
+            else if(lc2 == 4){
+            	int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Xoa hoc sinh theo khoi lop:\n";
+				cout << "2. Xoa hoc sinh theo ten va khoi lop:\n";
+				cout << "3. Xoa hoc sinh theo stt trong khoi lop:\n";
+				cout << "4. Quay lai\n";
+				cout << "0. Thoat\n";
+				cout << "Chon chuc nang: ";
+				cin >> lc3;
+                if( lc3 == 0){
+                	return 0;
+				}
+				else if(lc3 == 1){
+					int khoilop;
+					cout << "Khoi lop can xoa: ";
+					cin >>khoilop;
+	                deletehs3(head,khoilop);
+				}
+				else if(lc3 == 2){
+					int khoi;
+					string ten;
+					cout << "Ho va ten hoc sinh can xoa: "; cin.ignore();
+					getline(cin,ten);
+					chuanhoa(ten);
+					cout << "Nhap khoi lop cua hoc sinh: "; cin >> khoi;
+		            deletehs2(head,ten,khoi);
+				}
+				else if(lc3 == 3){
+					int khoilop1;
+					long stt;
+					cout << "Khoi lop can xoa: ";
+					cin >>khoilop1;
+					cout << "STT can xoa: ";
+					cin >>stt;
+	               	deletehs1(head,khoilop1,stt);
+				}
+				else if(lc3 == 4){
+					break;
+				}
+			}
+			else if(lc2 == 5){
+				int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Thong ke hoc sinh toan truong:\n";
+				cout << "2. Thong ke hoc sinh theo khoi lop:\n";
+				cout << "0. Thoat\n";
+				cout << "Chon chuc nang: ";
+				cin >> lc3;
+               	switch (lc3){
+               		case 0: 
+               			return 0;
+                   	case 1: 
+					   thongke(head);
+					   break;
+					case 2:
 						int khoilop;
 						cout << "Khoi lop can xem: ";
 						cin >>khoilop;
-                        thongkekhoi(head,khoilop);
-						}
-						default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+		                thongkekhoi(head,khoilop);
+						break;
+					default:
+	                    cout << "Chuc nang khong hop le, vui long chon lai.\n";
+				}
+			}
+			else if(lc2 == 6){
+				cout << "Thoat menu giao vien.\n";
+                break;
+			}     
+            else{
+            	cout << "Chuc nang khong hop le, vui long chon lai.\n";
+			}
+        }
+		else if(lc1 == 2){
+            int lc2;
+            cout << "\n-----------------------\n";
+            cout << "1. Xem danh sach hoc sinh\n";
+            cout << "2. Xem chi tiet mot hoc sinh\n";
+            cout << "3. Thoat\n";
+            cout << "Chon chuc nang: ";
+            cin >> lc2;
+ 			if(lc2 == 1){
+ 				int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Xem danh sach toan truong:\n";
+				cout << "2. Xem danh sach theo khoi lop\n";
+				cout << "Chon chuc nang: ";
+				cin >> lc3;
+                switch (lc3){
+	                case 1:{
+						duyetds(head);
+						break;
 					}
-					}
-                    case 6:
-                        cout << "Thoat menu giao vien.\n";
-                        break;
-                    default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
-                }
-            } 
-        } else if (lc1 == 2) {
-            int lc3;
-                cout << "\n-----------------------\n";
-                cout << "1. Xem danh sach hoc sinh\n";
-                cout << "2. Xem chi tiet mot hoc sinh\n";
-                cout << "3. Thoat\n";
-                cout << "Chon chuc nang: ";
-                cin >> lc3;
-                switch (lc3) {
-					case 1:{
-					int lc5;
-						cout << "\n-----------------------\n";
-						cout << "1. Xem danh sach toan truong:\n";
-						cout << "2. Xem danh sach theo khoi lop\n";
-						cout << "Chon chuc nang: ";
-						cin >> lc5;
-                		switch (lc5) {
-                    	case 1: {
-							duyetds(head);
-						 }
-						case 2:{
+					case 2:{
 						int khoilop;
 						cout << "Khoi lop can xem: ";
-                        cin >> khoilop;
-                        duyetdskhoi(head,khoilop);
-						}
-						default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
+		                cin >> khoilop;
+		                duyetdskhoi(head,khoilop);
+		                break;
 					}
-                    }
-                    case 2: {
-						int lc4;
-						cout << "\n-----------------------\n";
-						cout << "1. Tim kiem hoc sinh theo khoi lop va stt:\n";
-						cout << "2. Tim kiem hoc sinh theo ho va ten\n";
-						cin >> lc4;
-                		switch (lc4) {
-                    	case 1: {
-                        int stt, khoilop;
+					default:
+	                    cout << "Chuc nang khong hop le, vui long chon lai.\n";
+				}
+			}
+			else if(lc2 == 2){
+				int lc3;
+				cout << "\n-----------------------\n";
+				cout << "1. Tim kiem hoc sinh theo khoi lop va stt:\n";
+				cout << "2. Tim kiem hoc sinh theo ho va ten\n";
+				cin >> lc3;
+                switch (lc3){
+	                case 1:{
+		                int stt, khoilop;
 						cout << "Nhap khoi lop hoc sinh can xem: ";
-                        cin >> khoilop;
-                        cout << "Nhap STT hoc sinh can xem: ";
-                        cin >> stt;
-                        hs tmp = head;
-                                findhs2(tmp,khoilop,stt);}
-						case 2:{
+		                cin >> khoilop;
+		                cout << "Nhap STT hoc sinh can xem: ";
+		                cin >> stt;
+		                hs tmp = head;
+		                findhs2(tmp,khoilop,stt);
+		                break;
+					}
+					case 2:{
 						string ten;
 						cout << "Ho va ten sinh can xem: "; cin.ignore();
-                        getline(cin,ten);
+		                getline(cin,ten);
 						chuanhoa(ten);
-                        hs tmp = head;
-                                findhs3(head,ten);	
-						}
-						default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
-					}}
-                    default:
-                        cout << "Chuc nang khong hop le, vui long chon lai.\n";
-                }
-            } 
-    	else {
+		                hs tmp = head;
+	                    findhs3(head,ten);
+	                    break;
+					}
+					default:
+	                    cout << "Chuc nang khong hop le, vui long chon lai.\n";
+				}
+			}
+			else{
+				cout << "Chuc nang khong hop le, vui long chon lai.\n";
+			}
+        }
+    	else{
             cout << "Lua chon khong hop le, vui long chon lai.\n";
         }
+        return 0;
     }
-    return 0;
-}
-}
+}	
+
 
 	
 
