@@ -1562,6 +1562,11 @@ int main(){
 		head = tmp;
 		
 		// hs thu 2
+		hs q = head;
+		hs p = head;
+		while(p->next != NULL){
+			p = p->next;
+		}
 	   	s.khoilop = 8;
 	   	s.name = "Cao Van Luong";
 	   	s.stt = 14;
@@ -1641,7 +1646,7 @@ int main(){
 	  	hs tpp = new HS();
 		tpp->s = s;
 		tpp->next = NULL;
-		head->next = tpp;
+		p->next = tpp;
 		
 		// hs thu 3
 		s.khoilop = 7;
@@ -1719,11 +1724,14 @@ int main(){
 		s.CNTB = s.CNTX1*0.1 + s.CNTX2*0.1 + s.CNGK*0.3 + s.CNCK*0.5;
 		s.TinTB = s.TinTX1*0.1 + s.TinTX2*0.1 + s.TinGK*0.3 + s.TinCK*0.5;
 		s.TBmon = (s.ToanTB + s.VanTB + s.NNTB + s.GDCDTB + s.SuTB + s.DiaTB + s.LiTB + s.HoaTB + s.SinhTB + s.CNTB + s.TinTB) / 11;
-			   	
+			
+		while(q->next != NULL){
+			q = q->next;
+		}	   	
 	  	hs tkt = new HS();
-		tkt->s = s;
+	  	tkt->s = s;
 		tkt->next = NULL;
-		head->next = tkt;
+		q->next = tkt;
 		
 	
 	while(1){
@@ -2061,8 +2069,8 @@ int main(){
     	else{
             cout << "Lua chon khong hop le, vui long chon lai.\n";
         }
-        return 0;
     }
+    return 0;
 }	
 
 
