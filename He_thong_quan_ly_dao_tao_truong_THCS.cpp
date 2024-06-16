@@ -851,6 +851,7 @@ void duyettt(Student s){
 
 // duyet 1 hoc sinh
 void duyeths(Student s){
+	cout << "\n-----------------------\n";
 	cout << "Khoi lop: " << s.khoilop << endl;
 	cout << "Ho Ten: " << s.name << endl;
 	cout << "STT theo ds lop: " << s.stt << endl;
@@ -875,26 +876,27 @@ void duyeths(Student s){
 }
 
 // duyet ds hoc sinh
-void duyetds(hs a)
-{
+void duyetds(hs a){
+	hs p = a;
 	int n = Sizehs(a);
 	for (int i = 0; i < n; i++)
 	{
-		duyeths(a->s);
-		a = a->next;
+		duyeths(p->s);
+		p = p->next;
 	}
 	cout << endl;
 }
 
 // duyet ds hoc sinh theo khoi lop
 void duyetdskhoi(hs a, int x){
+	hs p = a;
 	int n = Sizehs(a);
 	for (int i = 0; i < n; i++)
 	{
-		if(a->s.khoilop == x){
-			duyeths(a->s);
+		if(p->s.khoilop == x){
+			duyeths(p->s);
 		}
-		a = a->next;
+		p = p->next;
 	}
 	cout << endl;
 } 
