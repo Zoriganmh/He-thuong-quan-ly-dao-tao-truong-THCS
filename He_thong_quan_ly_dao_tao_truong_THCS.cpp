@@ -423,7 +423,7 @@ int Sizehs(hs a)
 void sapxep(hs &h)
 {
 	hs p = h;
-	for (p; p->next = NULL; p = p->next)
+	for (p; p->next != NULL; p = p->next)
 	{
 		hs min = p;
 		for (hs q = p->next; q != NULL; q = q->next)
@@ -443,7 +443,7 @@ void sapxep(hs &h)
 // sap xep hoc sinh theo thu tu tang dan cua khoi lop
 void sapxep2(hs &h){
 	hs p = h;
-	for (p; p->next = NULL; p = p->next)
+	for (p; p->next != NULL; p = p->next)
 	{
 		hs min = p;
 		for (hs q = p->next; q != NULL; q = q->next)
@@ -479,7 +479,7 @@ string tachten(string s, int i){
 
 void sapxep1(hs &h){
 	hs p = h;
-	for (p; p->next = NULL; p = p->next){
+	for (p; p->next != NULL; p = p->next){
 		hs min = p;
 		for (hs q = p->next; q != NULL; q = q->next){
 			if(tachten(q->s.name, 2) < tachten(min->s.name,2) ){
@@ -499,7 +499,7 @@ void sapxep1(hs &h){
  // Sap xep hoc sinh theo TBmon
 void sapxep3(hs &h) {
  	hs p = h;
-	for (p; p->next = NULL; p = p->next)
+	for (p; p->next != NULL; p = p->next)
 	{
 		hs max = p;
 		for (hs q = p->next; q != NULL; q = q->next)
@@ -518,7 +518,7 @@ void sapxep3(hs &h) {
 //Sap xep theo loai hoc sinh (tu gioi den yeu)
 void sapxep4(hs &h){
  	hs p = h;
-	for (p; p->next = NULL; p = p->next)
+	for (p; p->next != NULL; p = p->next)
 	{
 		hs min = p;
 		for (hs q = p->next; q != NULL; q = q->next)
@@ -557,7 +557,7 @@ void sapxepTBmontheokhoi(hs &a, int x){
 	float k;
 	// mon toan
 	if(lc == 1){
-		for (p; p->next = NULL; p = p->next){
+		for (p; p->next != NULL; p = p->next){
 			hs max = p;
 			for(hs q = p->next; q != NULL; q = q->next){
 				if(q->s.ToanTB > max->s.ToanTB){
@@ -579,6 +579,7 @@ void sapxepTBmontheokhoi(hs &a, int x){
 				cout <<"Ho Ten: " << l->s.name << endl;
 				cout <<"Diem trung binh mon Toan: " << l->s.ToanTB << endl;	
 			}
+		}
 	}
 	// mon van
 	else if(lc == 2){
@@ -845,7 +846,7 @@ void sapxepTBmontheokhoi(hs &a, int x){
 // duyet thong tin ca nhan 1 hoc sinh
 void duyettt(Student s){
 	cout << "Khoi lop: " << s.khoilop << endl;
-	cout << "Ho Ten: " << s.name << endl;
+	cout << "Ho Ten: " << s.name << endl;	
 	cout << "STT theo ds lop: " << s.stt << endl;	
 }
 
@@ -891,8 +892,7 @@ void duyetds(hs a){
 void duyetdskhoi(hs a, int x){
 	hs p = a;
 	int n = Sizehs(a);
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++){
 		if(p->s.khoilop == x){
 			duyeths(p->s);
 		}
@@ -905,14 +905,13 @@ void duyetdskhoi(hs a, int x){
 void findhs1(hs a, int x)
 {
 	hs p = a;
-	Student as = p->s;
 	int n = Sizehs(a);
 	for (int i = 0; i < n; i++){
-		p = p->next;
-		if (as.khoilop == x)
+		if (p->s.khoilop == x)
 		{
 			duyettt(p->s);
 		}
+		p = p->next;
 	}
 }
 
@@ -920,25 +919,21 @@ void findhs1(hs a, int x)
 void findhs2(hs a, int x, long y )
 {
 	hs p = a;
-	Student as = p->s;
 	int n = Sizehs(a);
-	for (int i = 0; i < n; i++)
-	{
-		p = p->next;
-		if (as.khoilop == x && as.stt == y)
-		{
+	for (int i = 0; i < n; i++){
+		if (p->s.khoilop == x && p->s.stt == y){
 			duyettt(p->s);
 		}
+		p = p->next;
 	}
 }
 
 // tim kiem hoc sinh theo ten
 void findhs3(hs a, string nem){
 	hs p = a;
-	Student as = p->s;
 	int n = Sizehs(a);
 	for (int i = 0; i < n; i++){
-		if (as.name == nem){
+		if (p->s.name == nem){
 			duyettt(p->s);
 		}
 		p = p->next;
@@ -948,10 +943,9 @@ void findhs3(hs a, string nem){
 // tim kiem hoc sinh theo ten va khoi lop cho truoc
 void findhs4(hs a, string nem, int x){
 	hs p = a;
-	Student as = p->s;
 	int n = Sizehs(a);
 	for (int i = 0; i < n; i++){
-		if (as.name == nem && as.khoilop == x){
+		if (p->s.name == nem && p->s.khoilop == x){
 			duyettt(p->s);
 		}
 		p = p->next;
@@ -1359,13 +1353,14 @@ void thongke(hs a){
 	int n = Sizehs(a);
 	hs p = a;
 	while(p->next != NULL){
+		danhgia(p->s);
 		if(a->s.loai == 1) ++dem1;
 		if(a->s.loai == 2) ++dem2;
 		if(a->s.loai == 3) ++dem3;
 		if(a->s.loai == 4) ++dem4;
 		if(a->s.loai == 5) ++dem5;
 		p = p->next;
-	}
+	} 
 	float tbgioi = dem1 / n * 100;
 	float tbkha = dem2 / n * 100;
 	float tbtb = dem3 / n * 100;
@@ -1388,6 +1383,7 @@ void thongkekhoi(hs a, int x){
 	int n = Sizehs(a);
 	int dem;
 	while(p->next != NULL){
+		danhgia(p->s);
 		if(a->s.khoilop == x){
 			if(a->s.loai == 1) ++dem1;
 			if(a->s.loai == 2) ++dem2;
@@ -1415,7 +1411,7 @@ void thongkekhoi(hs a, int x){
 
 
 
-int main(){
+	int main(){
 	hs head = NULL;
 	/*
 	Student s;
